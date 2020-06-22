@@ -14,12 +14,12 @@ import androidx.room.PrimaryKey
 data class Model(
     @PrimaryKey
     val id: Int,
+    val taskId: Int,
     val name: String,
     val description: String,
     val paperLink: String,
     val sourceLink: String,
     val downloadLink: String,
     val imageLink: String,
-    val size: Int,
-    val taskId: Int
+    val size: Int
 )

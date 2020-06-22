@@ -7,7 +7,9 @@ import io.github.prabhuomkar.torchexpo.data.models.Task
 
 @Dao
 interface TasksDao {
-
     @Query("SELECT * FROM tasks")
-    fun getAllTasks(): LiveData<List<Task>>
+    fun getTasks(): LiveData<List<Task>>
+
+    @Query("SELECT * from tasks WHERE researchArea = :researchArea")
+    fun getTasksByResearchArea(researchArea: String): LiveData<List<Task>>
 }

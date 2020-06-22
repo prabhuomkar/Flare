@@ -7,7 +7,9 @@ import io.github.prabhuomkar.torchexpo.data.models.Model
 
 @Dao
 interface ModelsDao {
-
     @Query("SELECT * FROM models")
-    fun getAllModels(): LiveData<List<Model>>
+    fun getModels(): LiveData<List<Model>>
+
+    @Query("SELECT * from models WHERE taskId = :taskId")
+    fun getModelsByTaskId(taskId: Int): LiveData<List<Model>>
 }

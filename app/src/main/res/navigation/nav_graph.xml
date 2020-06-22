@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
-
     <fragment
         android:id="@+id/mainFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.main.MainFragment"
@@ -23,5 +22,14 @@
         android:name="io.github.prabhuomkar.torchexpo.ui.about.AboutFragment"
         android:label="About"
         tools:layout="@layout/about_fragment" />
-
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.task.TaskFragment"
+        android:label="About"
+        tools:layout="@layout/task_fragment" />
+    <fragment
+        android:id="@+id/modelFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.model.ModelFragment"
+        android:label="About"
+        tools:layout="@layout/model_fragment" />
 </navigation>
