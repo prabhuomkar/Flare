@@ -10,5 +10,8 @@
     <string name="licenses"><u>Licenses</u></string>
     <string name="about_developer">Developed by Omkar Prabhu</string>
 
+    <string name="task_image_description">Task Image</string>
+
+
     <string name="err_no_email_client">Please select an email client</string>
 </resources>
