@@ -20,6 +20,7 @@ data class Model(
     val paperLink: String,
     val sourceLink: String,
     val downloadLink: String,
+    val isDownloaded: Boolean,
     val imageLink: String,
     val size: Int
 )

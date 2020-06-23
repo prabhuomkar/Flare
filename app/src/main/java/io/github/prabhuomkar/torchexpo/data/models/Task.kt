@@ -31,8 +31,8 @@ class ResearchAreaTypeConverter {
     }
 
     @TypeConverter
-    fun toResearchArea(area: String): ResearchArea {
-        return when (area) {
+    fun toResearchArea(researchArea: String): ResearchArea {
+        return when (researchArea) {
             "Vision" -> ResearchArea.Vision
             "Generative" -> ResearchArea.Generative
             "Language" -> ResearchArea.Language

@@ -11,17 +11,17 @@ import io.github.prabhuomkar.torchexpo.data.models.Model
 import io.github.prabhuomkar.torchexpo.data.models.Task
 
 @Database(entities = [Model::class, Task::class], version = 1, exportSchema = false)
-abstract class TorchDatabase : RoomDatabase() {
+abstract class TorchExpoDatabase : RoomDatabase() {
 
     abstract fun modelsDao(): ModelsDao
     abstract fun tasksDao(): TasksDao
 
     companion object Builder {
-        private var INSTANCE: TorchDatabase? = null
+        private var INSTANCE: TorchExpoDatabase? = null
 
-        fun getInstance(context: Context): TorchDatabase {
+        fun getInstance(context: Context): TorchExpoDatabase {
             if (INSTANCE == null) {
-                synchronized(TorchDatabase::class) {
+                synchronized(TorchExpoDatabase::class) {
                     INSTANCE = buildRoomDB(context)
                 }
             }
@@ -31,7 +31,7 @@ abstract class TorchDatabase : RoomDatabase() {
         private fun buildRoomDB(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
-                TorchDatabase::class.java,
+                TorchExpoDatabase::class.java,
                 DATABASE_NAME
             ).build()
     }

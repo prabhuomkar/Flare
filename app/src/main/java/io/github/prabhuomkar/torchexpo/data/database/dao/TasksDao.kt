@@ -3,6 +3,7 @@ package io.github.prabhuomkar.torchexpo.data.database.dao
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
+import io.github.prabhuomkar.torchexpo.data.models.ResearchArea
 import io.github.prabhuomkar.torchexpo.data.models.Task
 
 @Dao
@@ -11,5 +12,5 @@ interface TasksDao {
     fun getTasks(): LiveData<List<Task>>
 
     @Query("SELECT * from tasks WHERE researchArea = :researchArea")
-    fun getTasksByResearchArea(researchArea: String): LiveData<List<Task>>
+    fun getTasksByResearchArea(researchArea: ResearchArea): LiveData<List<Task>>
 }
