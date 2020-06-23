@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-    <include layout="@layout/task_list_item" />
+    <include layout="@layout/list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

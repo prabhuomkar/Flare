@@ -8,10 +8,7 @@
     <string name="options_menu_contact_us">Contact us</string>
 
     <string name="licenses"><u>Licenses</u></string>
-    <string name="about_developer">Developed by Omkar Prabhu</string>
-
-    <string name="task_image_description">Task Image</string>
-
+    <string name="built_with_pytorch">Built with PyTorch</string>
 
     <string name="err_no_email_client">Please select an email client</string>
 </resources>
