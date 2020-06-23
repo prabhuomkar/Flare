@@ -44,16 +44,19 @@
         app:layout_constraintStart_toEndOf="@+id/barrier"
         app:layout_constraintTop_toBottomOf="@id/taskNameTextView" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/taskResearchAreaTextView"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    <com.google.android.material.chip.Chip
+        android:id="@+id/taskResearchAreaView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Vision"
-        app:cornerRadius="24dp"
+        app:chipBackgroundColor="@android:color/white"
+        app:chipStrokeColor="@android:color/darker_gray"
+        app:chipStrokeWidth="1dp"
         app:layout_constraintStart_toEndOf="@+id/barrier"
-        app:layout_constraintTop_toBottomOf="@+id/taskDescriptionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/taskDescriptionTextView"
+        app:textEndPadding="12dp"
+        app:textStartPadding="12dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
