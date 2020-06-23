@@ -6,7 +6,7 @@ import androidx.room.Query
 import io.github.prabhuomkar.torchexpo.data.models.Model
 
 @Dao
-interface ModelsDao {
+interface ModelDao {
     @Query("SELECT * FROM models")
     fun getModels(): LiveData<List<Model>>
 

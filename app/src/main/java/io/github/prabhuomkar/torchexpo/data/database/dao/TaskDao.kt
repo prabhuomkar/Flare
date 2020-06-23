@@ -7,7 +7,7 @@ import io.github.prabhuomkar.torchexpo.data.models.ResearchArea
 import io.github.prabhuomkar.torchexpo.data.models.Task
 
 @Dao
-interface TasksDao {
+interface TaskDao {
     @Query("SELECT * FROM tasks")
     fun getTasks(): LiveData<List<Task>>
 
