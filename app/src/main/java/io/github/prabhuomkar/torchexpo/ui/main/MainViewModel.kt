@@ -1,7 +1,14 @@
 package io.github.prabhuomkar.torchexpo.ui.main
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import io.github.prabhuomkar.torchexpo.data.database.TorchExpoDatabase
+import io.github.prabhuomkar.torchexpo.data.models.Task
 
-class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val torchExpoDatabase: TorchExpoDatabase = TorchExpoDatabase.getInstance(application)
+
+    internal val tasks: LiveData<List<Task>> = torchExpoDatabase.taskDao().getTasks()
 }

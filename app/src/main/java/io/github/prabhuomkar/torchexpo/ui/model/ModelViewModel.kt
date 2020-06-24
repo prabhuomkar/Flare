@@ -1,7 +1,14 @@
 package io.github.prabhuomkar.torchexpo.ui.model
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import io.github.prabhuomkar.torchexpo.data.database.TorchExpoDatabase
 
-class ModelViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class ModelViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val torchExpoDatabase: TorchExpoDatabase = TorchExpoDatabase.getInstance(application)
+
+    internal fun model(id: Int) {
+        torchExpoDatabase.modelDao().getModel(id)
+    }
 }

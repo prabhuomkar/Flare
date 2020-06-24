@@ -7,12 +7,29 @@ import io.github.prabhuomkar.torchexpo.data.models.Task
 import io.github.prabhuomkar.torchexpo.databinding.TaskListItemBinding
 
 
-class TasksListAdapter(private val tasks: List<Task>) :
+class TasksListAdapter() :
     RecyclerView.Adapter<TasksListAdapter.TaskViewHolder>() {
+
+    private val tasks: List<Task> = listOf(
+        Task(
+            1,
+            "Image Classification",
+            "Classify an image into several categories",
+            "imageURL",
+            "Vision"
+        ),
+        Task(
+            2,
+            "Image Segmentation",
+            "Segmentation of an image into different intensity levels",
+            "imageURL",
+            "Vision"
+        )
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return TaskViewHolder(TaskListItemBinding.inflate(inflater))
+        return TaskViewHolder(TaskListItemBinding.inflate(inflater, parent, false))
     }
 
     override fun getItemCount(): Int = tasks.size
@@ -24,7 +41,6 @@ class TasksListAdapter(private val tasks: List<Task>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(task: Task) {
             binding.task = task
-            binding.executePendingBindings()
         }
     }
 }

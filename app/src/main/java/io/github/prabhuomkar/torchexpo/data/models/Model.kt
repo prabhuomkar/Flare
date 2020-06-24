@@ -1,5 +1,6 @@
 package io.github.prabhuomkar.torchexpo.data.models
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
@@ -14,6 +15,7 @@ import androidx.room.PrimaryKey
 data class Model(
     @PrimaryKey
     val id: Int,
+    @ColumnInfo(index = true)
     val taskId: Int,
     val name: String,
     val description: String,

@@ -51,7 +51,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-oss-licenses:$oss_version"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
     implementation "org.pytorch:pytorch_android:$pytorch_version"
     implementation "org.pytorch:pytorch_android_torchvision:$pytorch_version"
     testImplementation 'junit:junit:4.12'
