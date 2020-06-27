@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.github.prabhuomkar.torchexpo.databinding.TaskFragmentBinding
-import io.github.prabhuomkar.torchexpo.ui.Model.ModelsListAdapter
+import io.github.prabhuomkar.torchexpo.ui.Model.ModelListAdapter
 
 class TaskFragment : Fragment() {
 
@@ -36,8 +36,8 @@ class TaskFragment : Fragment() {
         )
         binding.modelsListView.layoutManager = linearLayoutManager
 
-        viewModel.models.observe(viewLifecycleOwner, Observer { tasks ->
-            binding.modelsListView.adapter = ModelsListAdapter()
+        viewModel.models.observe(viewLifecycleOwner, Observer { models ->
+            binding.modelsListView.adapter = ModelListAdapter(models)
         })
     }
 

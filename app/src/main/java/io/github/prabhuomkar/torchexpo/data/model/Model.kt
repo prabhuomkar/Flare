@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.data.models
+package io.github.prabhuomkar.torchexpo.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

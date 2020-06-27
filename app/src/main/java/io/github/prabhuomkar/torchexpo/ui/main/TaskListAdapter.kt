@@ -3,29 +3,12 @@ package io.github.prabhuomkar.torchexpo.ui.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.github.prabhuomkar.torchexpo.data.models.Task
+import io.github.prabhuomkar.torchexpo.data.model.Task
 import io.github.prabhuomkar.torchexpo.databinding.TaskListItemBinding
 
 
-class TasksListAdapter() :
-    RecyclerView.Adapter<TasksListAdapter.TaskViewHolder>() {
-
-    private val tasks: List<Task> = listOf(
-        Task(
-            1,
-            "Image Classification",
-            "Classify an image into several categories",
-            "imageURL",
-            "Vision"
-        ),
-        Task(
-            2,
-            "Image Segmentation",
-            "Segmentation of an image into different intensity levels",
-            "imageURL",
-            "Vision"
-        )
-    )
+class TaskListAdapter(private val tasks: List<Task>) :
+    RecyclerView.Adapter<TaskListAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val inflater = LayoutInflater.from(parent.context)

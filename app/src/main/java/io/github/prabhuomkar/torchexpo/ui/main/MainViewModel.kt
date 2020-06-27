@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import io.github.prabhuomkar.torchexpo.data.database.TorchExpoDatabase
-import io.github.prabhuomkar.torchexpo.data.models.Task
+import io.github.prabhuomkar.torchexpo.data.model.Task
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

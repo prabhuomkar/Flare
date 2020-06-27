@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import io.github.prabhuomkar.torchexpo.data.database.TorchExpoDatabase
-import io.github.prabhuomkar.torchexpo.data.models.Model
+import io.github.prabhuomkar.torchexpo.data.model.Model
 
 class TaskViewModel(application: Application) : AndroidViewModel(application) {
 

@@ -6,7 +6,7 @@
 
         <variable
             name="task"
-            type="io.github.prabhuomkar.torchexpo.data.models.Task" />
+            type="io.github.prabhuomkar.torchexpo.data.model.Task" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -17,7 +17,7 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
         app:strokeColor="@color/colorBorder"
-        app:strokeWidth="2dp">
+        app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,6 +29,7 @@
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:src="@mipmap/ic_launcher"
+                app:image="@{task.imageLink}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/barrier"
                 app:layout_constraintStart_toStartOf="parent"

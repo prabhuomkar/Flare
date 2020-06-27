@@ -37,7 +37,7 @@ class MainFragment : Fragment() {
         binding.tasksListView.layoutManager = linearLayoutManager
 
         viewModel.tasks.observe(viewLifecycleOwner, Observer { tasks ->
-            binding.tasksListView.adapter = TasksListAdapter()
+            binding.tasksListView.adapter = TaskListAdapter(tasks)
         })
     }
 
