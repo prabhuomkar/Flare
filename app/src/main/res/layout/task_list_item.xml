@@ -25,7 +25,7 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/taskImageView"
+                android:id="@+id/taskImage"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:src="@mipmap/ic_launcher"
@@ -40,23 +40,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:barrierDirection="end"
-                app:constraint_referenced_ids="taskImageView" />
+                app:constraint_referenced_ids="taskImage" />
 
             <TextView
-                android:id="@+id/taskNameTextView"
+                android:id="@+id/taskName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@{task.name}"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/taskDescriptionTextView"
+                app:layout_constraintBottom_toTopOf="@+id/taskDescription"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/barrier"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/taskDescriptionTextView"
+                android:id="@+id/taskDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -64,7 +64,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/barrier"
-                app:layout_constraintTop_toBottomOf="@+id/taskNameTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/taskName" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -25,7 +25,7 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/modelImageView"
+                android:id="@+id/modelImage"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:src="@mipmap/ic_launcher"
@@ -40,23 +40,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:barrierDirection="end"
-                app:constraint_referenced_ids="modelImageView" />
+                app:constraint_referenced_ids="modelImage" />
 
             <TextView
-                android:id="@+id/modelNameTextView"
+                android:id="@+id/modelName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@{model.name}"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/modelDescriptionTextView"
+                app:layout_constraintBottom_toTopOf="@+id/modelDescription"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/barrier"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/modelDescriptionTextView"
+                android:id="@+id/modelDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -64,7 +64,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/barrier"
-                app:layout_constraintTop_toBottomOf="@+id/modelNameTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/modelName" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
