@@ -34,10 +34,12 @@ class MainFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(
             binding.root.context, RecyclerView.VERTICAL, false
         )
-        binding.tasksListView.layoutManager = linearLayoutManager
+        binding.taskList.layoutManager = linearLayoutManager
 
         viewModel.tasks.observe(viewLifecycleOwner, Observer { tasks ->
-            binding.tasksListView.adapter = TaskListAdapter(tasks)
+            if (tasks != null) {
+                binding.taskList.adapter = TaskListAdapter(tasks)
+            }
         })
     }
 

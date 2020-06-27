@@ -34,10 +34,13 @@ class TaskFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(
             binding.root.context, RecyclerView.VERTICAL, false
         )
-        binding.modelsListView.layoutManager = linearLayoutManager
+        binding.modelList.layoutManager = linearLayoutManager
 
-        viewModel.models.observe(viewLifecycleOwner, Observer { models ->
-            binding.modelsListView.adapter = ModelListAdapter(models)
+        val taskId = arguments?.getInt("id")!!
+        viewModel.modelsByTask(taskId).observe(viewLifecycleOwner, Observer { models ->
+            if (models != null) {
+                binding.modelList.adapter = ModelListAdapter(models)
+            }
         })
     }
 

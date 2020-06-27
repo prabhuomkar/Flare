@@ -7,7 +7,7 @@
     tools:context=".ui.task.TaskFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/modelsListView"
+        android:id="@+id/modelList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintHorizontal_bias="0.0" />

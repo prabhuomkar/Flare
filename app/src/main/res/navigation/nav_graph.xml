@@ -16,6 +16,13 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_taskFragment"
+            app:destination="@id/taskFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -26,7 +33,15 @@
         android:id="@+id/taskFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.task.TaskFragment"
         android:label="Task"
-        tools:layout="@layout/task_fragment" />
+        tools:layout="@layout/task_fragment">
+        <action
+            android:id="@+id/action_taskFragment_to_modelFragment"
+            app:destination="@id/modelFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/modelFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.model.ModelFragment"
