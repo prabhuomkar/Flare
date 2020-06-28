@@ -6,10 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/researchAreas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/taskList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vision"
+            android:textColor="#E32D5B"
+            app:chipBackgroundColor="@android:color/transparent"
+            app:chipEndPadding="8dp"
+            app:chipStartPadding="8dp"
+            app:chipStrokeColor="#E32D5B"
+            app:chipStrokeWidth="1dp" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generative"
+            android:textColor="#CC2F90"
+            app:chipBackgroundColor="@android:color/transparent"
+            app:chipEndPadding="8dp"
+            app:chipStartPadding="8dp"
+            app:chipStrokeColor="#CC2F90"
+            app:chipStrokeWidth="1dp" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Audio"
+            android:textColor="#B932CC"
+            app:chipBackgroundColor="@android:color/transparent"
+            app:chipEndPadding="8dp"
+            app:chipStartPadding="8dp"
+            app:chipStrokeColor="#B932CC"
+            app:chipStrokeWidth="1dp" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nlp"
+            android:textColor="#812CE5"
+            app:chipBackgroundColor="@android:color/transparent"
+            app:chipEndPadding="8dp"
+            app:chipStartPadding="8dp"
+            app:chipStrokeColor="#812CE5"
+            app:chipStrokeWidth="1dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/researchAreas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

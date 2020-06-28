@@ -15,4 +15,7 @@ interface TaskDao {
 
     @Query("SELECT * from tasks WHERE researchArea = :researchArea")
     fun getTasksByResearchArea(researchArea: String): LiveData<List<Task>>
+
+    @Query("SELECT DISTINCT researchArea from tasks")
+    fun getResearchAreas(): LiveData<List<String>>
 }

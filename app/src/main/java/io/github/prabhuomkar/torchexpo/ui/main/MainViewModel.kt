@@ -17,4 +17,5 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     val tasks: LiveData<List<Task>> = taskRepository.tasks
+    val researchAreas: LiveData<List<String>> = taskRepository.researchAreas
 }

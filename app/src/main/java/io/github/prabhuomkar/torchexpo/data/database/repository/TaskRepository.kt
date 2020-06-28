@@ -9,4 +9,6 @@ class TaskRepository(private val taskDao: TaskDao) {
     fun task(id: Int): LiveData<Task> = taskDao.getTask(id)
     fun tasksByResearchArea(researchArea: String): LiveData<List<Task>> =
         taskDao.getTasksByResearchArea(researchArea)
+
+    val researchAreas: LiveData<List<String>> = taskDao.getResearchAreas()
 }

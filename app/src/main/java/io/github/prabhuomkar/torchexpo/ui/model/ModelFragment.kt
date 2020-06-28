@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import io.github.prabhuomkar.torchexpo.data.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.ModelFragmentBinding
+import io.github.prabhuomkar.torchexpo.utils.getPlaygroundDestinationAction
 
 class ModelFragment : Fragment() {
 
@@ -39,6 +41,9 @@ class ModelFragment : Fragment() {
                     Uri.parse(_model.paperLink)
                 )
             )
+        }
+        binding.modelAction.setOnClickListener { v ->
+            v.findNavController().navigate(getPlaygroundDestinationAction(_model.taskId))
         }
         return binding.root
     }

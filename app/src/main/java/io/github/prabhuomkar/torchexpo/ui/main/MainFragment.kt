@@ -35,7 +35,6 @@ class MainFragment : Fragment() {
             binding.root.context, RecyclerView.VERTICAL, false
         )
         binding.taskList.layoutManager = linearLayoutManager
-
         viewModel.tasks.observe(viewLifecycleOwner, Observer { tasks ->
             if (tasks != null) {
                 binding.taskList.adapter = TaskListAdapter(tasks)

@@ -14,11 +14,6 @@ import io.github.prabhuomkar.torchexpo.databinding.AboutFragmentBinding
 
 class AboutFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            AboutFragment()
-    }
-
     private lateinit var viewModel: AboutViewModel
     private var _binding: AboutFragmentBinding? = null
     private val binding get() = _binding!!

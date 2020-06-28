@@ -46,5 +46,30 @@
         android:id="@+id/modelFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.model.ModelFragment"
         android:label="Model"
-        tools:layout="@layout/model_fragment" />
+        tools:layout="@layout/model_fragment">
+        <action
+            android:id="@+id/action_modelFragment_to_imageClassificationFragment"
+            app:destination="@id/imageClassificationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_modelFragment_to_imageSegmentationFragment"
+            app:destination="@id/imageSegmentationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageClassificationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.imageclassification.ImageClassificationFragment"
+        android:label="Image Classification"
+        tools:layout="@layout/image_classification_fragment" />
+    <fragment
+        android:id="@+id/imageSegmentationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.imagesegmentation.ImageSegmentationFragment"
+        android:label="Image Segmentation"
+        tools:layout="@layout/image_segmentation_fragment" />
 </navigation>

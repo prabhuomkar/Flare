@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:paddingVertical="8dp"
-            android:text="PyTorch Hub"
+            android:text="@string/pytorch_hub"
             android:textColor="@color/colorPrimary"
             app:icon="@drawable/pytorch_logo"
             app:iconSize="24dp"
@@ -97,6 +97,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linksBarrier"
             app:layout_constraintWidth_percent="0.48" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/modelAction"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp"
+            android:text="@string/download"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/modelSourceLink" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
