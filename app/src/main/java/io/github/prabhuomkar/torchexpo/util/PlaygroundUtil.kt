@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.utils
+package io.github.prabhuomkar.torchexpo.util
 
 import io.github.prabhuomkar.torchexpo.R
 

@@ -63,6 +63,7 @@
             app:chipStrokeColor="#812CE5"
             app:chipStrokeWidth="1dp" />
 
+
     </com.google.android.material.chip.ChipGroup>
 
     <androidx.recyclerview.widget.RecyclerView

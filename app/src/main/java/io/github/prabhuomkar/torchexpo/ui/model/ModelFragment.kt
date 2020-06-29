@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import io.github.prabhuomkar.torchexpo.data.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.ModelFragmentBinding
-import io.github.prabhuomkar.torchexpo.utils.getPlaygroundDestinationAction
+import io.github.prabhuomkar.torchexpo.util.getPlaygroundDestinationAction
 
 class ModelFragment : Fragment() {
 
