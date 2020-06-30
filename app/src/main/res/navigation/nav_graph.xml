@@ -61,6 +61,13 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_modelFragment_to_imageGenerationFragment"
+            app:destination="@id/imageSegmentationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/imageClassificationFragment"
@@ -72,4 +79,9 @@
         android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.imagesegmentation.ImageSegmentationFragment"
         android:label="Image Segmentation"
         tools:layout="@layout/image_segmentation_fragment" />
+    <fragment
+        android:id="@+id/imageGenerationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.generative.imagegeneration.ImageGenerationFragment"
+        android:label="Image Generation"
+        tools:layout="@layout/image_generation_fragment" />
 </navigation>
