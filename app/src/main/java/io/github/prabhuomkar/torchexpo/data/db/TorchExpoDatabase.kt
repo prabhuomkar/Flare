@@ -10,6 +10,8 @@ import io.github.prabhuomkar.torchexpo.data.db.dao.ModelDao
 import io.github.prabhuomkar.torchexpo.data.db.dao.TaskDao
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.data.db.model.Task
+import io.github.prabhuomkar.torchexpo.data.db.seeds.ModelSeed
+import io.github.prabhuomkar.torchexpo.data.db.seeds.TaskSeed
 
 @Database(entities = [Model::class, Task::class], version = 1, exportSchema = false)
 abstract class TorchExpoDatabase : RoomDatabase() {
@@ -39,8 +41,8 @@ abstract class TorchExpoDatabase : RoomDatabase() {
         private val CALLBACK = object : RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
-                populateTasks(db)
-                populateModels(db)
+                TaskSeed.populateTasks(db)
+                ModelSeed.populateModels(db)
             }
         }
 
