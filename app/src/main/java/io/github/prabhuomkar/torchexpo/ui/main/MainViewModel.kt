@@ -3,9 +3,9 @@ package io.github.prabhuomkar.torchexpo.ui.main
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import io.github.prabhuomkar.torchexpo.data.database.TorchExpoDatabase
-import io.github.prabhuomkar.torchexpo.data.database.repository.TaskRepository
-import io.github.prabhuomkar.torchexpo.data.model.Task
+import io.github.prabhuomkar.torchexpo.data.db.TorchExpoDatabase
+import io.github.prabhuomkar.torchexpo.data.db.model.Task
+import io.github.prabhuomkar.torchexpo.data.repository.TaskRepository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

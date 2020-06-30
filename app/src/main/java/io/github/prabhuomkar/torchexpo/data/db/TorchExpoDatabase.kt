@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.data.database
+package io.github.prabhuomkar.torchexpo.data.db
 
 import android.content.Context
 import androidx.room.Database
@@ -6,10 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import io.github.prabhuomkar.torchexpo.DATABASE_NAME
-import io.github.prabhuomkar.torchexpo.data.database.dao.ModelDao
-import io.github.prabhuomkar.torchexpo.data.database.dao.TaskDao
-import io.github.prabhuomkar.torchexpo.data.model.Model
-import io.github.prabhuomkar.torchexpo.data.model.Task
+import io.github.prabhuomkar.torchexpo.data.db.dao.ModelDao
+import io.github.prabhuomkar.torchexpo.data.db.dao.TaskDao
+import io.github.prabhuomkar.torchexpo.data.db.model.Model
+import io.github.prabhuomkar.torchexpo.data.db.model.Task
 
 @Database(entities = [Model::class, Task::class], version = 1, exportSchema = false)
 abstract class TorchExpoDatabase : RoomDatabase() {
@@ -51,11 +51,11 @@ abstract class TorchExpoDatabase : RoomDatabase() {
         }
 
         private fun populateModels(db: SupportSQLiteDatabase) {
-            db.execSQL("INSERT into models VALUES(1, 1, 'ResNet-18', 'Next generation ResNets, more efficient and accurate', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_resnext/', 'https://rebrand.ly/torchexpo-resnet-18', 0, 'https://pytorch.org/assets/images/resnet.png', 47)")
-            db.execSQL("INSERT into models VALUES(2, 1, 'GoogleNet', 'Deep Convolutional Neural Network architecture codenamed \"Inception\"', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_googlenet/', 'https://rebrand.ly/torchexpo-googlenet', 0, 'https://pytorch.org/assets/images/googlenet2.png', 27)")
-            db.execSQL("INSERT into models VALUES(3, 1, 'AlexNet', 'Deep Convolutional Neural Network won 2012 ImageNet', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_alexnet/', 'https://rebrand.ly/torchexpo-alexnet', 0, 'https://pytorch.org/assets/images/alexnet2.png', 244)")
-            db.execSQL("INSERT into models VALUES(4, 2, 'DeeplabV3-ResNet101', 'DeepLabV3 model with a ResNet-101 backbone', 'https://arxiv.org/abs/1706.05587', 'https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/', 'https://rebrand.ly/torchexpo-deeplabv3-resnet101', 0, 'https://pytorch.org/assets/images/deeplab2.png', 245)")
-            db.execSQL("INSERT into models VALUES(5, 2, 'FCN-ResNet101', 'Fully-Convolutional Network model with a ResNet-101 backbone', 'https://arxiv.org/abs/1411.4038', 'https://pytorch.org/hub/pytorch_vision_fcn_resnet101/', 'https://rebrand.ly/torchexpo-fcn-resnet101', 0, 'https://pytorch.org/assets/images/fcn2.png', 218)")
+            db.execSQL("INSERT into models VALUES(1, 1, 'ResNet-18', 'Next generation ResNets, more efficient and accurate', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_resnext/', 'https://rebrand.ly/torchexpo-resnet-18', 'https://pytorch.org/assets/images/resnet.png', 47)")
+            db.execSQL("INSERT into models VALUES(2, 1, 'GoogleNet', 'Deep Convolutional Neural Network architecture codenamed \"Inception\"', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_googlenet/', 'https://rebrand.ly/torchexpo-googlenet', 'https://pytorch.org/assets/images/googlenet2.png', 27)")
+            db.execSQL("INSERT into models VALUES(3, 1, 'AlexNet', 'Deep Convolutional Neural Network won 2012 ImageNet', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_alexnet/', 'https://rebrand.ly/torchexpo-alexnet', 'https://pytorch.org/assets/images/alexnet2.png', 244)")
+            db.execSQL("INSERT into models VALUES(4, 2, 'DeeplabV3-ResNet101', 'DeepLabV3 model with a ResNet-101 backbone', 'https://arxiv.org/abs/1706.05587', 'https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/', 'https://rebrand.ly/torchexpo-deeplabv3-resnet101', 'https://pytorch.org/assets/images/deeplab2.png', 245)")
+            db.execSQL("INSERT into models VALUES(5, 2, 'FCN-ResNet101', 'Fully-Convolutional Network model with a ResNet-101 backbone', 'https://arxiv.org/abs/1411.4038', 'https://pytorch.org/hub/pytorch_vision_fcn_resnet101/', 'https://rebrand.ly/torchexpo-fcn-resnet101', 'https://pytorch.org/assets/images/fcn2.png', 218)")
         }
     }
 }

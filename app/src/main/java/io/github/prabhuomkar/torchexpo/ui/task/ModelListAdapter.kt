@@ -6,7 +6,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import io.github.prabhuomkar.torchexpo.R
-import io.github.prabhuomkar.torchexpo.data.model.Model
+import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.ModelListItemBinding
 
 class ModelListAdapter(private val models: List<Model>) :

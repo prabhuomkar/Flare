@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.data.model
+package io.github.prabhuomkar.torchexpo.data.db.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -22,7 +22,6 @@ data class Model(
     val paperLink: String,
     val sourceLink: String,
     val downloadLink: String,
-    val isDownloaded: Boolean,
     val imageLink: String,
     val size: Int
 )

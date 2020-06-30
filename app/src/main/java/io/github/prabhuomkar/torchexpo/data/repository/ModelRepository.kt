@@ -1,8 +1,8 @@
-package io.github.prabhuomkar.torchexpo.data.database.repository
+package io.github.prabhuomkar.torchexpo.data.repository
 
 import androidx.lifecycle.LiveData
-import io.github.prabhuomkar.torchexpo.data.database.dao.ModelDao
-import io.github.prabhuomkar.torchexpo.data.model.Model
+import io.github.prabhuomkar.torchexpo.data.db.dao.ModelDao
+import io.github.prabhuomkar.torchexpo.data.db.model.Model
 
 class ModelRepository(private val modelDao: ModelDao) {
     val models: LiveData<List<Model>> = modelDao.getModels()

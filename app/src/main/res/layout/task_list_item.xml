@@ -6,7 +6,7 @@
 
         <variable
             name="task"
-            type="io.github.prabhuomkar.torchexpo.data.model.Task" />
+            type="io.github.prabhuomkar.torchexpo.data.db.model.Task" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
