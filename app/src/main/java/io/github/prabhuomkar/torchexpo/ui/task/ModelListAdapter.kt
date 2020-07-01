@@ -2,10 +2,8 @@ package io.github.prabhuomkar.torchexpo.ui.Model
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import io.github.prabhuomkar.torchexpo.R
+import io.github.prabhuomkar.torchexpo.binding.BindingHandlers
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.ModelListItemBinding
 
@@ -26,10 +24,7 @@ class ModelListAdapter(private val models: List<Model>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: Model) {
             binding.model = model
-            binding.root.setOnClickListener { v ->
-                val bundle = bundleOf("id" to model.id)
-                v.findNavController().navigate(R.id.action_taskFragment_to_modelFragment, bundle)
-            }
+            binding.handlers = BindingHandlers()
         }
     }
 }

@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="handlers"
+            type="io.github.prabhuomkar.torchexpo.binding.BindingHandlers" />
+
+        <variable
             name="model"
             type="io.github.prabhuomkar.torchexpo.data.db.model.Model" />
     </data>
@@ -72,6 +76,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:onClick="@{(view) -> handlers.openLink(view, model.sourceLink)}"
             android:paddingVertical="8dp"
             android:text="@string/pytorch_hub"
             android:textColor="@color/colorPrimary"
@@ -88,6 +93,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:onClick="@{(view) -> handlers.openLink(view, model.paperLink)}"
             android:paddingVertical="8dp"
             android:text="@{model.paperLink.substring(22)}"
             android:textColor="@color/colorPrimary"
@@ -103,6 +109,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{(view) -> handlers.navigateToPlayground(view, model.taskId)}"
             android:paddingVertical="8dp"
             android:text="@string/download"
             app:layout_constraintEnd_toEndOf="parent"

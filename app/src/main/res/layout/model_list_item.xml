@@ -5,6 +5,10 @@
     <data>
 
         <variable
+            name="handlers"
+            type="io.github.prabhuomkar.torchexpo.binding.BindingHandlers" />
+
+        <variable
             name="model"
             type="io.github.prabhuomkar.torchexpo.data.db.model.Model" />
     </data>
@@ -14,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="@{(view) -> handlers.navigateToModel(view, model.id)}"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
         app:strokeColor="@color/colorBorder"

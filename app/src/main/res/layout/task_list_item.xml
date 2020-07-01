@@ -5,6 +5,10 @@
     <data>
 
         <variable
+            name="handlers"
+            type="io.github.prabhuomkar.torchexpo.binding.BindingHandlers" />
+
+        <variable
             name="task"
             type="io.github.prabhuomkar.torchexpo.data.db.model.Task" />
     </data>
@@ -14,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="@{(view) -> handlers.navigateToTask(view, task.id)}"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
         app:strokeColor="@color/colorBorder"

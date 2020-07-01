@@ -7,16 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import io.github.prabhuomkar.torchexpo.data.db.model.Task
 import io.github.prabhuomkar.torchexpo.databinding.TaskFragmentBinding
 import io.github.prabhuomkar.torchexpo.ui.Model.ModelListAdapter
 
 class TaskFragment : Fragment() {
 
+    private val args: TaskFragmentArgs by navArgs()
     private lateinit var viewModel: TaskViewModel
     private var _binding: TaskFragmentBinding? = null
     private val binding get() = _binding!!
+    private lateinit var _task: Task
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +40,12 @@ class TaskFragment : Fragment() {
         )
         binding.modelList.layoutManager = linearLayoutManager
 
-        val taskId = arguments?.getInt("id")!!
+        val taskId = args.taskId
+        viewModel.task(taskId).observe(viewLifecycleOwner, Observer { task ->
+            if (task != null) {
+                _task = task
+            }
+        })
         viewModel.modelsByTask(taskId).observe(viewLifecycleOwner, Observer { models ->
             if (models != null) {
                 binding.modelList.adapter = ModelListAdapter(models)

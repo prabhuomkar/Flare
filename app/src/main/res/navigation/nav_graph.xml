@@ -22,7 +22,12 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="taskId"
+                android:defaultValue="0"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -34,19 +39,32 @@
         android:name="io.github.prabhuomkar.torchexpo.ui.task.TaskFragment"
         android:label="Task"
         tools:layout="@layout/task_fragment">
+        <argument
+            android:name="taskId"
+            android:defaultValue="0"
+            app:argType="integer" />
         <action
             android:id="@+id/action_taskFragment_to_modelFragment"
             app:destination="@id/modelFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="modelId"
+                android:defaultValue="0"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/modelFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.model.ModelFragment"
         android:label="Model"
         tools:layout="@layout/model_fragment">
+        <argument
+            android:name="modelId"
+            android:defaultValue="0"
+            app:argType="integer" />
         <action
             android:id="@+id/action_modelFragment_to_imageClassificationFragment"
             app:destination="@id/imageClassificationFragment"
@@ -63,7 +81,7 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_modelFragment_to_imageGenerationFragment"
-            app:destination="@id/imageSegmentationFragment"
+            app:destination="@id/imageGenerationFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"

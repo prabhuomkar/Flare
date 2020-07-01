@@ -1,7 +1,5 @@
 package io.github.prabhuomkar.torchexpo.ui.model
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
+import io.github.prabhuomkar.torchexpo.binding.BindingHandlers
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.ModelFragmentBinding
-import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
 
 class ModelFragment : Fragment() {
 
+    private val args: ModelFragmentArgs by navArgs()
     private lateinit var viewModel: ModelViewModel
     private var _binding: ModelFragmentBinding? = null
     private val binding get() = _binding!!
@@ -26,26 +25,7 @@ class ModelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = ModelFragmentBinding.inflate(inflater, container, false)
-        binding.modelSourceLink.setOnClickListener {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(_model.sourceLink)
-                )
-            )
-        }
-        binding.modelPaperLink.setOnClickListener {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(_model.paperLink)
-                )
-            )
-        }
-        binding.modelAction.setOnClickListener { v ->
-            v.findNavController()
-                .navigate(PlaygroundUtil.getPlaygroundDestinationAction(_model.taskId))
-        }
+        binding.handlers = BindingHandlers()
         return binding.root
     }
 
@@ -56,7 +36,7 @@ class ModelFragment : Fragment() {
                 ModelViewModel(this.activity!!.application)::class.java
             )
 
-        val modelId = arguments?.getInt("id")!!
+        val modelId = args.modelId
         viewModel.model(modelId).observe(viewLifecycleOwner, Observer { model ->
             if (model != null) {
                 _model = model
