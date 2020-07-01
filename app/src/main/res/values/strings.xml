@@ -8,7 +8,7 @@
     <string name="options_menu_contact_us">Contact us</string>
 
     <string name="download">Download</string>
-    <string name="licenses"><u>Licenses</u></string>
+    <string name="licenses"><u>LICENSES</u></string>
     <string name="built_with_pytorch">Built with PyTorch</string>
     <string name="pytorch_hub">PyTorch Hub</string>
 
