@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "taskId": 1,
+    "name": "ResNet-18",
+    "description": "Next generation ResNets, more efficient and accurate",
+    "paperLink": "https://arxiv.org/abs/1512.03385",
+    "sourceLink": "https://pytorch.org/hub/pytorch_vision_resnext/",
+    "downloadLink": "https://rebrand.ly/torchexpo-resnet-18",
+    "imageLink": "https://pytorch.org/assets/images/resnet.png",
+    "size": 47
+  },
+  {
+    "id": 2,
+    "taskId": 1,
+    "name": "GoogleNet",
+    "description": "Deep Convolutional Neural Network architecture codenamed \"Inception\"",
+    "paperLink": "https://arxiv.org/abs/1512.03385",
+    "sourceLink": "https://pytorch.org/hub/pytorch_vision_googlenet/",
+    "downloadLink": "https://rebrand.ly/torchexpo-googlenet",
+    "imageLink": "https://pytorch.org/assets/images/googlenet2.png",
+    "size": 27
+  },
+  {
+    "id": 3,
+    "taskId": 1,
+    "name": "AlexNet",
+    "description": "Deep Convolutional Neural Network won 2012 ImageNet",
+    "paperLink": "https://arxiv.org/abs/1512.03385",
+    "sourceLink": "https://pytorch.org/hub/pytorch_vision_alexnet/",
+    "downloadLink": "https://rebrand.ly/torchexpo-alexnet",
+    "imageLink": "https://pytorch.org/assets/images/alexnet2.png",
+    "size": 244
+  },
+  {
+    "id": 4,
+    "taskId": 2,
+    "name": "DeeplabV3-ResNet101",
+    "description": "DeepLabV3 model with a ResNet-101 backbone",
+    "paperLink": "https://arxiv.org/abs/1706.05587",
+    "sourceLink": "https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/",
+    "downloadLink": "https://rebrand.ly/torchexpo-deeplabv3-resnet101",
+    "imageLink": "https://pytorch.org/assets/images/deeplab2.png",
+    "size": 245
+  },
+  {
+    "id": 5,
+    "taskId": 2,
+    "name": "FCN-ResNet101",
+    "description": "Fully-Convolutional Network model with a ResNet-101 backbone",
+    "paperLink": "https://arxiv.org/abs/1411.4038",
+    "sourceLink": "https://pytorch.org/hub/pytorch_vision_fcn_resnet101/",
+    "downloadLink": "https://rebrand.ly/torchexpo-fcn-resnet101",
+    "imageLink": "https://pytorch.org/assets/images/fcn2.png",
+    "size": 218
+  },
+  {
+    "id": 6,
+    "taskId": 3,
+    "name": "PGAN",
+    "description": "High quality image generation of fashion, celebrity faces",
+    "paperLink": "https://arxiv.org/abs/1710.10196",
+    "sourceLink": "https://pytorch.org/hub/facebookresearch_pytorch-gan-zoo_pgan/",
+    "downloadLink": "https://rebrand.ly/torchexpo-pgan",
+    "imageLink": "https://pytorch.org/assets/images/pganlogo.png",
+    "size": 0
+  },
+  {
+    "id": 7,
+    "taskId": 3,
+    "name": "DCGAN",
+    "description": "A simple image generative model for 64x64 images",
+    "paperLink": "https://arxiv.org/abs/1511.06434",
+    "sourceLink": "https://pytorch.org/hub/facebookresearch_pytorch-gan-zoo_dcgan/",
+    "downloadLink": "https://rebrand.ly/torchexpo-dcgan",
+    "imageLink": "https://pytorch.org/assets/images/dcgan_fashionGen.jpg",
+    "size": 0
+  }
+]

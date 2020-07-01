@@ -45,21 +45,5 @@ abstract class TorchExpoDatabase : RoomDatabase() {
                 ModelSeed.populateModels(db)
             }
         }
-
-        private fun populateTasks(db: SupportSQLiteDatabase) {
-            db.execSQL("INSERT into tasks VALUES(1, 'Image Classification', 'Recognize images and find their associated class', 'https://paperswithcode.com/media/thumbnails/task/task-0000000951-52325f45_O0tAMly.jpg', 'Vision')")
-            db.execSQL("INSERT into tasks VALUES(2, 'Image Segmentation', 'Cluster parts of an image together which belong to the same object class', 'https://paperswithcode.com/media/thumbnails/task/task-0000000885-5d13a681_ZOc2kft.jpg', 'Vision')")
-            db.execSQL("INSERT into tasks VALUES(3, 'Image Generation', 'Task of generating new images from an existing dataset', 'https://paperswithcode.com/media/thumbnails/task/task-0000000001-8c5e89b0_b2Odeg7.jpg', 'Generative')")
-        }
-
-        private fun populateModels(db: SupportSQLiteDatabase) {
-            db.execSQL("INSERT into models VALUES(1, 1, 'ResNet-18', 'Next generation ResNets, more efficient and accurate', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_resnext/', 'https://rebrand.ly/torchexpo-resnet-18', 'https://pytorch.org/assets/images/resnet.png', 47)")
-            db.execSQL("INSERT into models VALUES(2, 1, 'GoogleNet', 'Deep Convolutional Neural Network architecture codenamed \"Inception\"', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_googlenet/', 'https://rebrand.ly/torchexpo-googlenet', 'https://pytorch.org/assets/images/googlenet2.png', 27)")
-            db.execSQL("INSERT into models VALUES(3, 1, 'AlexNet', 'Deep Convolutional Neural Network won 2012 ImageNet', 'https://arxiv.org/abs/1512.03385', 'https://pytorch.org/hub/pytorch_vision_alexnet/', 'https://rebrand.ly/torchexpo-alexnet', 'https://pytorch.org/assets/images/alexnet2.png', 244)")
-            db.execSQL("INSERT into models VALUES(4, 2, 'DeeplabV3-ResNet101', 'DeepLabV3 model with a ResNet-101 backbone', 'https://arxiv.org/abs/1706.05587', 'https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/', 'https://rebrand.ly/torchexpo-deeplabv3-resnet101', 'https://pytorch.org/assets/images/deeplab2.png', 245)")
-            db.execSQL("INSERT into models VALUES(5, 2, 'FCN-ResNet101', 'Fully-Convolutional Network model with a ResNet-101 backbone', 'https://arxiv.org/abs/1411.4038', 'https://pytorch.org/hub/pytorch_vision_fcn_resnet101/', 'https://rebrand.ly/torchexpo-fcn-resnet101', 'https://pytorch.org/assets/images/fcn2.png', 218)")
-            db.execSQL("INSERT into models VALUES(6, 3, 'PGAN', 'High quality image generation of fashion, celebrity faces', 'https://arxiv.org/abs/1710.10196', 'https://pytorch.org/hub/facebookresearch_pytorch-gan-zoo_pgan/', 'https://rebrand.ly/torchexpo-pgan', 'https://pytorch.org/assets/images/pganlogo.png', 245)")
-            db.execSQL("INSERT into models VALUES(7, 3, 'DCGAN', 'A simple image generative model for 64x64 images', 'https://arxiv.org/abs/1511.06434', 'https://pytorch.org/hub/facebookresearch_pytorch-gan-zoo_dcgan/', 'https://rebrand.ly/torchexpo-dcgan', 'https://pytorch.org/assets/images/dcgan_fashionGen.jpg', 0)")
-        }
     }
 }

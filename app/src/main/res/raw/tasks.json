@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Image Classification",
+    "description": "Recognize images and find their associated class",
+    "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000951-52325f45_O0tAMly.jpg",
+    "researchArea": "Vision"
+  },
+  {
+    "id": 2,
+    "name": "Image Segmentation",
+    "description": "Cluster parts of an image together which belong to the same object class",
+    "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000885-5d13a681_ZOc2kft.jpg",
+    "researchArea": "Vision"
+  },
+  {
+    "id": 3,
+    "name": "Image Generation",
+    "description": "Task of generating new images from an existing dataset",
+    "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000001-8c5e89b0_b2Odeg7.jpg",
+    "researchArea": "Generative"
+  }
+]

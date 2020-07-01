@@ -7,16 +7,29 @@ import java.util.*
 
 class FileUtil {
 
-    fun getModelAssetFileName(modelName: String): String =
-        modelName.toLowerCase(Locale.ROOT).replace("[ - ]", "_").plus(".pt")
+    companion object {
+        fun getModelAssetFileName(modelName: String): String =
+            modelName.toLowerCase(Locale.ROOT).replace("[ - ]", "_").plus(".pt")
 
-    fun getModelAssetDirPath(context: Context): String =
-        context.applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString()
+        fun getModelAssetDirPath(context: Context): String =
+            context.applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+                .toString()
 
-    fun getModelAssetFilePath(context: Context, modelName: String): String =
-        getModelAssetDirPath(context).plus("/").plus(getModelAssetFileName(modelName))
+        fun getModelAssetFilePath(context: Context, modelName: String): String =
+            getModelAssetDirPath(context).plus("/").plus(getModelAssetFileName(modelName))
 
-    fun isModelAssetFileDownloaded(context: Context, modelName: String) =
-        File(getModelAssetFilePath(context, modelName)).exists()
+        fun isModelAssetFileDownloaded(context: Context, modelName: String) =
+            File(getModelAssetFilePath(context, modelName)).exists()
+
+        fun getStringFromAssetFile(fileName: String): String {
+            val inputStream = this::class.java.classLoader?.getResourceAsStream(fileName)
+            if (inputStream != null) {
+                return inputStream.bufferedReader().use {
+                    it.readText()
+                }
+            }
+            return ""
+        }
+    }
 
 }
