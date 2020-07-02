@@ -43,11 +43,11 @@ class ModelFragment : Fragment() {
                 binding.model = model
             }
         })
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

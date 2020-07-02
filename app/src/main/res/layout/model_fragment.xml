@@ -5,9 +5,15 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="handlers"
             type="io.github.prabhuomkar.torchexpo.binding.BindingHandlers" />
+
+        <variable
+            name="viewModel"
+            type="io.github.prabhuomkar.torchexpo.ui.model.ModelViewModel" />
 
         <variable
             name="model"
@@ -105,13 +111,31 @@
             app:layout_constraintWidth_percent="0.48" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/modelAction"
+            android:id="@+id/modelDownload"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.startDownload(model)}"
+            android:paddingVertical="8dp"
+            android:text="@string/download"
+            android:visibility="invisible"
+            app:canDownload="@{model.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/modelSourceLink" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/modelPlay"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{(view) -> handlers.navigateToPlayground(view, model.taskId)}"
             android:paddingVertical="8dp"
-            android:text="@string/download"
+            android:text="@string/play"
+            android:textColor="@android:color/white"
+            android:visibility="invisible"
+            app:backgroundTint="@color/colorAccent"
+            app:canPlay="@{model.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/modelSourceLink" />

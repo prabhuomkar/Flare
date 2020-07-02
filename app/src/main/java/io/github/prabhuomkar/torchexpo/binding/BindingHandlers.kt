@@ -9,6 +9,7 @@ import io.github.prabhuomkar.torchexpo.ui.task.TaskFragmentDirections
 import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
 
 class BindingHandlers {
+
     fun openLink(view: View, url: String?) {
         if (!url.isNullOrEmpty()) {
             view.context.startActivity(

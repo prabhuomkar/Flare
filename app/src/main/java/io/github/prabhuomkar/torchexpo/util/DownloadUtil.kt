@@ -1,22 +1,22 @@
 package io.github.prabhuomkar.torchexpo.util
 
-import android.content.Context
-import android.util.Log
-import androidx.work.Worker
-import androidx.work.WorkerParameters
+import androidx.work.Data
+import io.github.prabhuomkar.torchexpo.data.db.model.Model
 
-class DownloadUtil(context: Context, params: WorkerParameters) : Worker(context, params) {
 
-    override fun doWork(): Result {
-        val appContext = applicationContext
-        // TODO: Add notification about starting to download file
-        return try {
-            // TODO: Clear notifications
-            Result.success()
-        } catch (throwable: Throwable) {
-            Log.e(DownloadUtil::class.simpleName, throwable.message!!)
-            Result.failure()
+class DownloadUtil {
+
+    companion object {
+
+        fun createDataFromModel(model: Model): Data {
+            val builder = Data.Builder()
+            builder.putString("MODEL_NAME", model.name)
+            builder.putString("MODEL_DOWNLOAD_LINK", model.downloadLink)
+            return builder.build()
+        }
+
+        fun getUniqueWorkName(model: Model): String {
+            return "DOWNLOAD_MODEL_".plus(model.id.toString())
         }
     }
-
 }
