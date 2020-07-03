@@ -25,16 +25,14 @@ class ModelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = ModelFragmentBinding.inflate(inflater, container, false)
-        binding.handlers = BindingHandlers()
-        return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel =
             ViewModelProvider(this).get(
                 ModelViewModel(this.activity!!.application)::class.java
             )
+
+        binding.handlers = BindingHandlers()
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
         val modelId = args.modelId
         viewModel.model(modelId).observe(viewLifecycleOwner, Observer { model ->
@@ -44,6 +42,7 @@ class ModelFragment : Fragment() {
             }
         })
 
+        return binding.root
     }
 
     override fun onDestroyView() {

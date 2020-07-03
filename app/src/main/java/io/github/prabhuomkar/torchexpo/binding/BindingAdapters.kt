@@ -22,22 +22,16 @@ fun loadImage(view: ImageView, imageUrl: String?) {
 @BindingAdapter("canDownload")
 fun canDownload(view: View, modelName: String?) {
     if (!modelName.isNullOrEmpty()) {
-        view.visibility = if (FileUtil.isModelAssetFileDownloaded(
-                view.context,
-                modelName
-            )
-        ) View.GONE else View.VISIBLE
+        view.visibility = if (FileUtil.isModelAssetFileDownloaded(view.context, modelName)) View
+            .INVISIBLE else View.VISIBLE
     }
 }
 
 @BindingAdapter("canPlay")
 fun canPlay(view: View, modelName: String?) {
     if (!modelName.isNullOrEmpty()) {
-        view.visibility = if (FileUtil.isModelAssetFileDownloaded(
-                view.context,
-                modelName
-            )
-        ) View.VISIBLE else View.GONE
+        view.visibility = if (FileUtil.isModelAssetFileDownloaded(view.context, modelName)) View
+            .VISIBLE else View.INVISIBLE
     }
 }
 

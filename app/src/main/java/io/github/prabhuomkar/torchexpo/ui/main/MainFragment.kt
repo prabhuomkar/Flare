@@ -23,11 +23,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = MainFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel =
             ViewModelProvider(this).get(MainViewModel(this.activity!!.application)::class.java)
 
@@ -40,6 +35,8 @@ class MainFragment : Fragment() {
                 binding.taskList.adapter = TaskListAdapter(tasks)
             }
         })
+
+        return binding.root
     }
 
     override fun onDestroyView() {
