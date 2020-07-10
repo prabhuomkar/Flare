@@ -15,6 +15,27 @@
   },
   {
     "id": 3,
+    "name": "Object Detection",
+    "description": "Detecting instances of objects within an image",
+    "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000004-57dd87c7_D7W1Zlx.jpg",
+    "researchArea": "Vision"
+  },
+  {
+    "id": 4,
+    "name": "Text Classification",
+    "description": "Categorize a sentence based on sentiment model",
+    "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000563-59ba915b.jpg",
+    "researchArea": "Nlp"
+  },
+  {
+    "id": 5,
+    "name": "Text-to-Speech Synthesis",
+    "description": "Synthesize a natural sounding speech from raw transcripts",
+    "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000247-88badf9f_Lvvok5w.gif",
+    "researchArea": "Audio"
+  },
+  {
+    "id": 6,
     "name": "Image Generation",
     "description": "Task of generating new images from an existing dataset",
     "imageLink": "https://paperswithcode.com/media/thumbnails/task/task-0000000001-8c5e89b0_b2Odeg7.jpg",

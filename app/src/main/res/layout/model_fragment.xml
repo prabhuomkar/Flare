@@ -84,7 +84,7 @@
             android:layout_marginTop="16dp"
             android:onClick="@{(view) -> handlers.openLink(view, model.sourceLink)}"
             android:paddingVertical="8dp"
-            android:text="@string/pytorch_hub"
+            android:text="@string/source"
             android:textColor="@color/colorPrimary"
             app:icon="@drawable/pytorch_logo"
             app:iconSize="24dp"
