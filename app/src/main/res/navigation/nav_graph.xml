@@ -67,25 +67,22 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_modelFragment_to_imageClassificationFragment"
-            app:destination="@id/imageClassificationFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/imageClassificationFragment" />
         <action
             android:id="@+id/action_modelFragment_to_imageSegmentationFragment"
-            app:destination="@id/imageSegmentationFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/imageSegmentationFragment" />
+        <action
+            android:id="@+id/action_modelFragment_to_objectDetectionFragment"
+            app:destination="@id/objectDetectionFragment" />
+        <action
+            android:id="@+id/action_modelFragment_to_textClassificationFragment"
+            app:destination="@id/textClassificationFragment" />
+        <action
+            android:id="@+id/action_modelFragment_to_textToSpeechSynthesisFragment"
+            app:destination="@id/textToSpeechSynthesisFragment" />
         <action
             android:id="@+id/action_modelFragment_to_imageGenerationFragment"
-            app:destination="@id/imageGenerationFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/imageGenerationFragment" />
     </fragment>
     <fragment
         android:id="@+id/imageClassificationFragment"
@@ -97,6 +94,21 @@
         android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.imagesegmentation.ImageSegmentationFragment"
         android:label="Image Segmentation"
         tools:layout="@layout/image_segmentation_fragment" />
+    <fragment
+        android:id="@+id/objectDetectionFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.objectdetection.ObjectDetectionFragment"
+        android:label="Object Detection"
+        tools:layout="@layout/object_detection_fragment" />
+    <fragment
+        android:id="@+id/textClassificationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.textclassification.TextClassificationFragment"
+        android:label="Text Classification"
+        tools:layout="@layout/text_classification_fragment" />
+    <fragment
+        android:id="@+id/textToSpeechSynthesisFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.audio.texttospeechsynthesis.TextToSpeechSynthesisFragment"
+        android:label="Text-to-Speech Synthesis"
+        tools:layout="@layout/text_to_speech_synthesis_fragment" />
     <fragment
         android:id="@+id/imageGenerationFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.playground.generative.imagegeneration.ImageGenerationFragment"

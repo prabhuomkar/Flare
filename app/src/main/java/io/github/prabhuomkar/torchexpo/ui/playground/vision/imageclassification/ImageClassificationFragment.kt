@@ -19,15 +19,12 @@ class ImageClassificationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = ImageClassificationFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel =
             ViewModelProvider(this).get(
                 ImageClassificationViewModel(this.activity!!.application)::class.java
             )
+
+        return binding.root
     }
 
     override fun onDestroyView() {

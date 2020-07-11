@@ -12,6 +12,7 @@
     <string name="source">Source</string>
     <string name="licenses"><u>LICENSES</u></string>
     <string name="built_with_pytorch">Built with PyTorch</string>
+    <string name="more_models_coming_soon">Support for more models are coming soon!</string>
 
     <string name="err_no_email_client">Please select an email client</string>
 </resources>

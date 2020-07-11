@@ -20,15 +20,12 @@ class ImageGenerationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = ImageGenerationFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel =
             ViewModelProvider(this).get(
                 ImageGenerationViewModel(this.activity!!.application)::class.java
             )
+
+        return binding.root
     }
 
     override fun onDestroyView() {

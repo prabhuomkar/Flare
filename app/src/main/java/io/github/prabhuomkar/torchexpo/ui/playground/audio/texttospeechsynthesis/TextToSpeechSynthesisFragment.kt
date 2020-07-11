@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.vision.imagesegmentation
+package io.github.prabhuomkar.torchexpo.ui.playground.audio.texttospeechsynthesis
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,22 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import io.github.prabhuomkar.torchexpo.databinding.ImageSegmentationFragmentBinding
+import io.github.prabhuomkar.torchexpo.databinding.TextToSpeechSynthesisFragmentBinding
 
-class ImageSegmentationFragment : Fragment() {
+class TextToSpeechSynthesisFragment : Fragment() {
 
-    private lateinit var viewModel: ImageSegmentationViewModel
-    private var _binding: ImageSegmentationFragmentBinding? = null
+    private lateinit var viewModel: TextToSpeechSynthesisViewModel
+    private var _binding: TextToSpeechSynthesisFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = ImageSegmentationFragmentBinding.inflate(inflater, container, false)
+        _binding = TextToSpeechSynthesisFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                ImageSegmentationViewModel(this.activity!!.application)::class.java
+                TextToSpeechSynthesisViewModel(this.activity!!.application)::class.java
             )
 
         return binding.root
@@ -31,5 +31,4 @@ class ImageSegmentationFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

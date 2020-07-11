@@ -31,7 +31,6 @@ class ModelFragment : Fragment() {
             )
 
         binding.handlers = BindingHandlers()
-        binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         val modelId = args.modelId

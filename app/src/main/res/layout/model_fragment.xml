@@ -12,10 +12,6 @@
             type="io.github.prabhuomkar.torchexpo.binding.BindingHandlers" />
 
         <variable
-            name="viewModel"
-            type="io.github.prabhuomkar.torchexpo.ui.model.ModelViewModel" />
-
-        <variable
             name="model"
             type="io.github.prabhuomkar.torchexpo.data.db.model.Model" />
     </data>
@@ -96,12 +92,13 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/modelPaperLink"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:visibility="@{model.paperLink.length() > 22 ? View.VISIBLE : View.GONE}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="@{(view) -> handlers.openLink(view, model.paperLink)}"
             android:paddingVertical="8dp"
-            android:text="@{model.paperLink.substring(22)}"
+            android:text="@{model.paperLink.length() > 22 ? model.paperLink.substring(22) : ``}"
             android:textColor="@color/colorPrimary"
             app:icon="@drawable/arxiv_logo"
             app:iconSize="24dp"
@@ -109,20 +106,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linksBarrier"
             app:layout_constraintWidth_percent="0.48" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/modelDownload"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewModel.handleDownload(view, model)}"
-            android:paddingVertical="8dp"
-            android:text="@{viewModel.isDownloading ? viewModel.progress + ` · (Click to Cancel)` : @string/download}"
-            android:visibility="@{viewModel.isDownloaded ? View.INVISIBLE : View.VISIBLE}"
-            app:canDownload="@{model.name}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/modelSourceLink" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/modelPlay"
@@ -133,9 +116,7 @@
             android:paddingVertical="8dp"
             android:text="@string/play"
             android:textColor="@android:color/white"
-            android:visibility="@{viewModel.isDownloaded ? View.VISIBLE : View.INVISIBLE}"
             app:backgroundTint="@color/colorAccent"
-            app:canPlay="@{model.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/modelSourceLink" />
