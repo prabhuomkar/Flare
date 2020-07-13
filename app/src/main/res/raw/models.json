@@ -57,10 +57,10 @@
   {
     "id": 6,
     "taskId": 3,
-    "name": "MaskRCNN",
+    "name": "Mask R-CNN",
     "description": "Simple framework for object instance segmentation",
     "paperLink": "https://arxiv.org/abs/1703.06870",
-    "sourceLink": "https://github.com/facebookresearch/Detectron",
+    "sourceLink": "https://github.com/pytorch/vision/blob/master/torchvision/models/detection/mask_rcnn.py",
     "downloadLink": "https://rebrand.ly/torchexpo-mask-rcnn",
     "imageLink": "https://github.com/facebookresearch/Detectron/raw/master/demo/output/33823288584_1d21cf0a26_k_example_output.jpg",
     "size": 0
