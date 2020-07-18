@@ -92,7 +92,6 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/modelPaperLink"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:visibility="@{model.paperLink.length() > 22 ? View.VISIBLE : View.GONE}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -100,6 +99,7 @@
             android:paddingVertical="8dp"
             android:text="@{model.paperLink.length() > 22 ? model.paperLink.substring(22) : ``}"
             android:textColor="@color/colorPrimary"
+            android:visibility="@{model.paperLink.length() > 22 ? View.VISIBLE : View.GONE}"
             app:icon="@drawable/arxiv_logo"
             app:iconSize="24dp"
             app:iconTint="@null"
