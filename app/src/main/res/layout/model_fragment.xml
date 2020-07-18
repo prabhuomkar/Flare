@@ -112,7 +112,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{(view) -> handlers.navigateToPlayground(view, model.taskId)}"
+            android:onClick="@{(view) -> handlers.navigateToPlayground(view, model.taskId, model.id)}"
             android:paddingVertical="8dp"
             android:text="@string/play"
             android:textColor="@android:color/white"

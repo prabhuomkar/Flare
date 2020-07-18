@@ -21,9 +21,9 @@ class BindingHandlers {
         }
     }
 
-    fun navigateToPlayground(view: View, taskId: Int) {
-        view.findNavController()
-            .navigate(PlaygroundUtil.getPlaygroundDestinationAction(taskId))
+    fun navigateToPlayground(view: View, taskId: Int, modelId: Int) {
+        val navDirection = PlaygroundUtil.getPlaygroundDestinationAction(taskId, modelId)
+        if (navDirection != null) view.findNavController().navigate(navDirection)
     }
 
     fun navigateToTask(view: View, taskId: Int) {

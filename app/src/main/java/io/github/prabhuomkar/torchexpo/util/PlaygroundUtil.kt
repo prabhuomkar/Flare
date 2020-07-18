@@ -1,19 +1,26 @@
 package io.github.prabhuomkar.torchexpo.util
 
-import io.github.prabhuomkar.torchexpo.R
+import androidx.navigation.NavDirections
+import io.github.prabhuomkar.torchexpo.ui.model.ModelFragmentDirections
 
 class PlaygroundUtil {
 
     companion object {
-        fun getPlaygroundDestinationAction(taskId: Int): Int {
+        fun getPlaygroundDestinationAction(taskId: Int, modelId: Int): NavDirections? {
             when (taskId) {
-                1 -> return R.id.action_modelFragment_to_imageClassificationFragment
-                2 -> return R.id.action_modelFragment_to_imageSegmentationFragment
-                3 -> return R.id.action_modelFragment_to_objectDetectionFragment
-                4 -> return R.id.action_modelFragment_to_textClassificationFragment
-                5 -> return R.id.action_modelFragment_to_textToSpeechSynthesisFragment
-                6 -> return R.id.action_modelFragment_to_imageGenerationFragment
-                else -> return 0
+                1 -> return ModelFragmentDirections
+                    .actionModelFragmentToImageClassificationFragment(modelId)
+                2 -> return ModelFragmentDirections
+                    .actionModelFragmentToImageSegmentationFragment(modelId)
+                3 -> return ModelFragmentDirections
+                    .actionModelFragmentToObjectDetectionFragment(modelId)
+                4 -> return ModelFragmentDirections
+                    .actionModelFragmentToTextClassificationFragment(modelId)
+                5 -> return ModelFragmentDirections
+                    .actionModelFragmentToTextToSpeechSynthesisFragment(modelId)
+                6 -> return ModelFragmentDirections
+                    .actionModelFragmentToImageGenerationFragment(modelId)
+                else -> return null
             }
         }
     }
