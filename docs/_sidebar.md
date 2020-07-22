@@ -6,7 +6,6 @@
     - [Models](https://github.com/torchexpo/models)
     - [Examples](about/examples.md)
 
-
 - Getting Started
     
     - [Setup & Guidelines](getting-started/setup-guidelines.md)
