@@ -3,7 +3,7 @@
 - About TorchExpo
     
     - [Architecture](about/architecture.md)
-    - [Models](about/models.md)
+    - [Models](https://github.com/torchexpo/models)
     - [Examples](about/examples.md)
 
 
