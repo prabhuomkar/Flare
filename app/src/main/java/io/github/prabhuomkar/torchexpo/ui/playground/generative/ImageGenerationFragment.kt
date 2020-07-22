@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.vision.imagesegmentation
+package io.github.prabhuomkar.torchexpo.ui.playground.generative
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,24 +9,28 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
-import io.github.prabhuomkar.torchexpo.databinding.ImageSegmentationFragmentBinding
+import io.github.prabhuomkar.torchexpo.databinding.ImageGenerationFragmentBinding
+import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 
-class ImageSegmentationFragment : Fragment() {
+class ImageGenerationFragment : Fragment() {
 
-    private val args: ImageSegmentationFragmentArgs by navArgs()
-    private lateinit var viewModel: ImageSegmentationViewModel
-    private var _binding: ImageSegmentationFragmentBinding? = null
+    private val args: ImageGenerationFragmentArgs by navArgs()
+    private lateinit var viewModel: PlaygroundViewModel
+    private var _binding: ImageGenerationFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var _model: Model
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = ImageSegmentationFragmentBinding.inflate(inflater, container, false)
+        _binding = ImageGenerationFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                ImageSegmentationViewModel(this.activity!!.application)::class.java
+                PlaygroundViewModel(
+                    this.activity!!.application
+                )::class.java
             )
 
         binding.lifecycleOwner = viewLifecycleOwner
@@ -46,5 +50,4 @@ class ImageSegmentationFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

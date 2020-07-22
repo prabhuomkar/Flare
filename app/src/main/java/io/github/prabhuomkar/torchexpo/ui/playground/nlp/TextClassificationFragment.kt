@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.nlp.textclassification
+package io.github.prabhuomkar.torchexpo.ui.playground.nlp
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.TextClassificationFragmentBinding
+import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 
 class TextClassificationFragment : Fragment() {
 
     private val args: TextClassificationFragmentArgs by navArgs()
-    private lateinit var viewModel: TextClassificationViewModel
+    private lateinit var viewModel: PlaygroundViewModel
     private var _binding: TextClassificationFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var _model: Model
@@ -26,7 +27,9 @@ class TextClassificationFragment : Fragment() {
         _binding = TextClassificationFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                TextClassificationViewModel(this.activity!!.application)::class.java
+                PlaygroundViewModel(
+                    this.activity!!.application
+                )::class.java
             )
 
         binding.lifecycleOwner = viewLifecycleOwner

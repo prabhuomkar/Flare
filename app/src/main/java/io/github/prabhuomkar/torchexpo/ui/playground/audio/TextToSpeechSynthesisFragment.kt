@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.generative.imagegeneration
+package io.github.prabhuomkar.torchexpo.ui.playground.audio
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,25 +9,27 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
-import io.github.prabhuomkar.torchexpo.databinding.ImageGenerationFragmentBinding
+import io.github.prabhuomkar.torchexpo.databinding.TextToSpeechSynthesisFragmentBinding
+import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 
-class ImageGenerationFragment : Fragment() {
+class TextToSpeechSynthesisFragment : Fragment() {
 
-    private val args: ImageGenerationFragmentArgs by navArgs()
-    private lateinit var viewModel: ImageGenerationViewModel
-    private var _binding: ImageGenerationFragmentBinding? = null
+    private val args: TextToSpeechSynthesisFragmentArgs by navArgs()
+    private lateinit var viewModel: PlaygroundViewModel
+    private var _binding: TextToSpeechSynthesisFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var _model: Model
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = ImageGenerationFragmentBinding.inflate(inflater, container, false)
+        _binding = TextToSpeechSynthesisFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                ImageGenerationViewModel(this.activity!!.application)::class.java
+                PlaygroundViewModel(
+                    this.activity!!.application
+                )::class.java
             )
 
         binding.lifecycleOwner = viewLifecycleOwner

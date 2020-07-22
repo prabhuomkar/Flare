@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="io.github.prabhuomkar.torchexpo.ui.playground.nlp.textclassification.TextClassificationViewModel" />
+            type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
             name="model"
@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.playground.nlp.textclassification.TextClassificationFragment">
+        tools:context=".ui.playground.nlp.TextClassificationFragment">
 
         <TextView
             android:layout_width="wrap_content"

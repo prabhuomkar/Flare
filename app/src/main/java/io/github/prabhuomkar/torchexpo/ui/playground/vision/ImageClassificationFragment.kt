@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.vision.imageclassification
+package io.github.prabhuomkar.torchexpo.ui.playground.vision
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.databinding.ImageClassificationFragmentBinding
+import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 
 class ImageClassificationFragment : Fragment() {
 
     private val args: ImageClassificationFragmentArgs by navArgs()
-    private lateinit var viewModel: ImageClassificationViewModel
+    private lateinit var viewModel: PlaygroundViewModel
     private var _binding: ImageClassificationFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var _model: Model
@@ -26,7 +27,9 @@ class ImageClassificationFragment : Fragment() {
         _binding = ImageClassificationFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                ImageClassificationViewModel(this.activity!!.application)::class.java
+                PlaygroundViewModel(
+                    this.activity!!.application
+                )::class.java
             )
 
         binding.lifecycleOwner = viewLifecycleOwner

@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.audio.texttospeechsynthesis
+package io.github.prabhuomkar.torchexpo.ui.playground.vision
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
-import io.github.prabhuomkar.torchexpo.databinding.TextToSpeechSynthesisFragmentBinding
+import io.github.prabhuomkar.torchexpo.databinding.ImageSegmentationFragmentBinding
+import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 
-class TextToSpeechSynthesisFragment : Fragment() {
+class ImageSegmentationFragment : Fragment() {
 
-    private val args: TextToSpeechSynthesisFragmentArgs by navArgs()
-    private lateinit var viewModel: TextToSpeechSynthesisViewModel
-    private var _binding: TextToSpeechSynthesisFragmentBinding? = null
+    private val args: ImageSegmentationFragmentArgs by navArgs()
+    private lateinit var viewModel: PlaygroundViewModel
+    private var _binding: ImageSegmentationFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var _model: Model
 
@@ -23,10 +24,12 @@ class TextToSpeechSynthesisFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = TextToSpeechSynthesisFragmentBinding.inflate(inflater, container, false)
+        _binding = ImageSegmentationFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                TextToSpeechSynthesisViewModel(this.activity!!.application)::class.java
+                PlaygroundViewModel(
+                    this.activity!!.application
+                )::class.java
             )
 
         binding.lifecycleOwner = viewLifecycleOwner
@@ -46,4 +49,5 @@ class TextToSpeechSynthesisFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="io.github.prabhuomkar.torchexpo.ui.playground.vision.imageclassification.ImageClassificationViewModel" />
+            type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
             name="model"
@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.playground.vision.imageclassification.ImageClassificationFragment">
+        tools:context=".ui.playground.vision.ImageClassificationFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="@{model.name}"
-                android:textColor="@android:color/white"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/class1_text"
                 app:layout_constraintStart_toStartOf="parent" />

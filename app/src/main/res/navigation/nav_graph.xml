@@ -116,7 +116,7 @@
     </fragment>
     <fragment
         android:id="@+id/imageClassificationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.imageclassification.ImageClassificationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.ImageClassificationFragment"
         android:label="Image Classification"
         tools:layout="@layout/image_classification_fragment">
         <argument
@@ -126,7 +126,7 @@
     </fragment>
     <fragment
         android:id="@+id/imageSegmentationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.imagesegmentation.ImageSegmentationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.ImageSegmentationFragment"
         android:label="Image Segmentation"
         tools:layout="@layout/image_segmentation_fragment">
         <argument
@@ -136,7 +136,7 @@
     </fragment>
     <fragment
         android:id="@+id/objectDetectionFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.objectdetection.ObjectDetectionFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.ObjectDetectionFragment"
         android:label="Object Detection"
         tools:layout="@layout/object_detection_fragment">
         <argument
@@ -146,7 +146,7 @@
     </fragment>
     <fragment
         android:id="@+id/textClassificationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.textclassification.TextClassificationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.TextClassificationFragment"
         android:label="Text Classification"
         tools:layout="@layout/text_classification_fragment">
         <argument
@@ -156,7 +156,7 @@
     </fragment>
     <fragment
         android:id="@+id/textToSpeechSynthesisFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.audio.texttospeechsynthesis.TextToSpeechSynthesisFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.audio.TextToSpeechSynthesisFragment"
         android:label="Text-to-Speech Synthesis"
         tools:layout="@layout/text_to_speech_synthesis_fragment">
         <argument
@@ -166,7 +166,7 @@
     </fragment>
     <fragment
         android:id="@+id/imageGenerationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.generative.imagegeneration.ImageGenerationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.generative.ImageGenerationFragment"
         android:label="Image Generation"
         tools:layout="@layout/image_generation_fragment">
         <argument
