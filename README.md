@@ -1,16 +1,10 @@
-<h1 align="center">
- <img src="assets/banner.png" width="50%">
-</h1>
-<p align="center">
- Android application running models from TorchExpo
- <br />
- <br />
- <img src="https://img.shields.io/github/license/torchexpo/android?style=flat-square"
-    alt="License">
- <img src="https://img.shields.io/badge/pytorch--android-1.4-%23ee4c2c?style=flat-square"
-    alt="PyTorch Android Version">
- <img src="https://img.shields.io/travis/torchexpo/android?style=flat-square" alt="Build Status">
-</p>
+# TorchExpo Android Application
+
+<img src="https://img.shields.io/github/license/torchexpo/android?style=flat-square"
+   alt="License">
+<img src="https://img.shields.io/badge/pytorch--android-1.4-%23ee4c2c?style=flat-square"
+   alt="PyTorch Android Version">
+<img src="https://img.shields.io/travis/torchexpo/android?style=flat-square" alt="Build Status">
 
 * [About PyTorch Mobile](#about-pytorch-mobile)
 * [Getting Started](#getting-started)
