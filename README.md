@@ -33,6 +33,10 @@ into an Android application. It is as simple as importing and using any other An
 can add PyTorch's Gradle dependencies and can run inferences.
 _[Read more](https://pytorch.org/mobile/android/)_
 
+<p align="center">
+	<img src="assets/readme_banner.png" width="75%">
+</p>
+
 ### Built With
 * [PyTorch](https://pytorch.org)
 * [PyTorch Android API](https://pytorch.org/mobile/android/)
