@@ -2,7 +2,7 @@
  <img src="assets/banner.png" width="50%">
 </h1>
 <p align="center">
- Android application with collection of machine learning experiments using PyTorch Android API
+ Android application running models from TorchExpo
  <br />
  <br />
  <img src="https://img.shields.io/github/license/torchexpo/android?style=flat-square"
@@ -41,7 +41,6 @@ _[Read more](https://pytorch.org/mobile/android/)_
 ## Getting Started
 
 ### Prerequisites
-* [Python 3](https://www.python.org/download/releases/3.0/)
 * [Kotlin](https://kotlinlang.org)
 * [Android Studio](https://developer.android.com/studio)
 
@@ -52,8 +51,6 @@ git clone https://github.com/torchexpo/android.git
 OR
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/TorchExpo.git
 ```
-* [Android Setup Guide](https://prabhuomkar.github.io/TorchExpo/#/getting-started?id=android-studio-setup)
-* [PyTorch Models Setup Guide](https://prabhuomkar.github.io/TorchExpo/#/getting-started?id=pytorch-setup)
 
 ## Contributing
 We appreciate all contributions. If you are planning to contribute back bug-fixes, please do so
@@ -64,7 +61,7 @@ open an issue and discuss the feature with us. Sending a PR without discussion m
 resulting in a rejected PR, because we might be taking the project in a different direction
 than you might be aware of.
 
-Please refer our [Contribution Guide](https://prabhuomkar.github.io/TorchExpo/#/contributing) for more details.
+Please refer our [Contribution Guide](CONTRIBUTING.md) for more details.
 
 ## License
 This project is licensed under Apache-2.0 as given in [LICENSE](LICENSE) file.
