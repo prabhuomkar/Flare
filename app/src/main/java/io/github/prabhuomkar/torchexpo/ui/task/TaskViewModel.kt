@@ -3,11 +3,15 @@ package io.github.prabhuomkar.torchexpo.ui.task
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import io.github.prabhuomkar.torchexpo.data.db.TorchExpoDatabase
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
 import io.github.prabhuomkar.torchexpo.data.db.model.Task
+import io.github.prabhuomkar.torchexpo.data.network.APIClient
 import io.github.prabhuomkar.torchexpo.data.repository.ModelRepository
 import io.github.prabhuomkar.torchexpo.data.repository.TaskRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class TaskViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -21,11 +25,14 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
         modelRepository = ModelRepository(modelDao)
     }
 
-    fun task(id: String): LiveData<Task> {
-        return taskRepository.task(id)
-    }
+    fun task(id: String): LiveData<Task> = taskRepository.task(id)
 
-    fun modelsByTask(taskId: String): LiveData<List<Model>> {
-        return modelRepository.modelsByTask(taskId)
+    fun modelsByTask(taskId: String): LiveData<List<Model>> = modelRepository.modelsByTask(taskId)
+
+    fun getModelsFromNetwork(taskId: String) = viewModelScope.launch(Dispatchers.IO) {
+        val response = APIClient.instance.getModels(taskId)
+        if (response.isSuccessful()) {
+            response.body()?.forEach { modelRepository.insert(it) }
+        }
     }
 }

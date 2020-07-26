@@ -21,8 +21,10 @@ object APIClient {
                 .build()
 
             chain.proceed(request)
-        }.connectTimeout(API_CONNECTION_TIMEOUT, TimeUnit.MINUTES)
-        .readTimeout(API_READ_TIMEOUT, TimeUnit.SECONDS).build()
+        }
+        .connectTimeout(API_CONNECTION_TIMEOUT, TimeUnit.MINUTES)
+        .readTimeout(API_READ_TIMEOUT, TimeUnit.SECONDS)
+        .build()
 
     val instance: TorchExpoService by lazy {
         val retrofit = Retrofit.Builder()
