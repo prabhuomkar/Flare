@@ -20,16 +20,6 @@ class FileUtil {
 
         fun isModelAssetFileDownloaded(context: Context, modelName: String) =
             File(getModelAssetFilePath(context, modelName)).exists()
-
-        fun getStringFromAssetFile(fileName: String): String {
-            val inputStream = this::class.java.classLoader?.getResourceAsStream(fileName)
-            if (inputStream != null) {
-                return inputStream.bufferedReader().use {
-                    it.readText()
-                }
-            }
-            return ""
-        }
     }
 
 }

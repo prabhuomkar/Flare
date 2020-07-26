@@ -12,6 +12,10 @@
             type="io.github.prabhuomkar.torchexpo.binding.BindingHandlers" />
 
         <variable
+            name="task"
+            type="io.github.prabhuomkar.torchexpo.data.db.model.Task" />
+
+        <variable
             name="model"
             type="io.github.prabhuomkar.torchexpo.data.db.model.Model" />
     </data>
@@ -112,7 +116,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{(view) -> handlers.navigateToPlayground(view, model.taskId, model.id)}"
+            android:onClick="@{(view) -> handlers.navigateToPlayground(view, task.name, model._id)}"
             android:paddingVertical="8dp"
             android:text="@string/play"
             android:textColor="@android:color/white"

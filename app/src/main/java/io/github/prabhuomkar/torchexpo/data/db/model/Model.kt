@@ -8,15 +8,15 @@ import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "models", foreignKeys = [ForeignKey(
-        entity = Task::class, parentColumns = ["id"], childColumns = ["taskId"],
+        entity = Task::class, parentColumns = ["_id"], childColumns = ["taskId"],
         onDelete = CASCADE
     )]
 )
 data class Model(
     @PrimaryKey
-    val id: Int,
+    val _id: String,
     @ColumnInfo(index = true)
-    val taskId: Int,
+    val taskId: String,
     val name: String,
     val description: String,
     val paperLink: String,

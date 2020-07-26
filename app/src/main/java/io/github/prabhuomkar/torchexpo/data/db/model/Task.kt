@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "tasks")
 data class Task(
     @PrimaryKey
-    val id: Int,
+    val _id: String,
     val name: String,
     val description: String,
     val imageLink: String,

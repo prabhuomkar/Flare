@@ -17,7 +17,7 @@ class ModelViewModel(application: Application) : AndroidViewModel(application) {
         modelRepository = ModelRepository(modelDao)
     }
 
-    fun model(id: Int): LiveData<Model> {
+    fun model(id: String): LiveData<Model> {
         return modelRepository.model(id)
     }
 }

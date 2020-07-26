@@ -10,9 +10,9 @@ interface ModelDao {
     @Query("SELECT * FROM models")
     fun getModels(): LiveData<List<Model>>
 
-    @Query("SELECT * from models WHERE id = :id")
-    fun getModel(id: Int): LiveData<Model>
+    @Query("SELECT * from models WHERE _id = :id")
+    fun getModel(id: String): LiveData<Model>
 
     @Query("SELECT * from models WHERE taskId = :taskId")
-    fun getModelsByTaskId(taskId: Int): LiveData<List<Model>>
+    fun getModelsByTaskId(taskId: String): LiveData<List<Model>>
 }

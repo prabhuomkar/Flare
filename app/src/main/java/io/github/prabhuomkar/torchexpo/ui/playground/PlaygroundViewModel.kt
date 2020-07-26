@@ -16,7 +16,7 @@ class PlaygroundViewModel(application: Application) : AndroidViewModel(applicati
         modelRepository = ModelRepository(modelDao)
     }
 
-    fun model(id: Int): LiveData<Model> {
+    fun model(id: String): LiveData<Model> {
         return modelRepository.model(id)
     }
 

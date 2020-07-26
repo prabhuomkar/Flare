@@ -21,11 +21,11 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
         modelRepository = ModelRepository(modelDao)
     }
 
-    fun task(id: Int): LiveData<Task> {
+    fun task(id: String): LiveData<Task> {
         return taskRepository.task(id)
     }
 
-    fun modelsByTask(taskId: Int): LiveData<List<Model>> {
+    fun modelsByTask(taskId: String): LiveData<List<Model>> {
         return modelRepository.modelsByTask(taskId)
     }
 }

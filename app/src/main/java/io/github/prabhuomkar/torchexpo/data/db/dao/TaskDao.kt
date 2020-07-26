@@ -10,8 +10,8 @@ interface TaskDao {
     @Query("SELECT * FROM tasks")
     fun getTasks(): LiveData<List<Task>>
 
-    @Query("SELECT * from tasks WHERE id = :id")
-    fun getTask(id: Int): LiveData<Task>
+    @Query("SELECT * from tasks WHERE _id = :id")
+    fun getTask(id: String): LiveData<Task>
 
     @Query("SELECT * from tasks WHERE researchArea = :researchArea")
     fun getTasksByResearchArea(researchArea: String): LiveData<List<Task>>
