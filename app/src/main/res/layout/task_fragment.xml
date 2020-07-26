@@ -6,23 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".ui.task.TaskFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/modelList"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshModelList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipToPadding="true"
-        android:paddingBottom="16dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/more_models_coming_soon"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modelList" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/modelList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="true"
+                android:paddingBottom="16dp"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/more_models_coming_soon"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/refreshModelList" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

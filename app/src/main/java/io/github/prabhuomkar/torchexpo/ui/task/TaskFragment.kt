@@ -49,6 +49,11 @@ class TaskFragment : Fragment() {
             }
         })
 
+        binding.refreshModelList.setOnRefreshListener {
+            viewModel.getModelsFromNetwork(taskId)
+            binding.refreshModelList.isRefreshing = false
+        }
+
         return binding.root
     }
 

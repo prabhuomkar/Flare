@@ -38,6 +38,11 @@ class MainFragment : Fragment() {
             }
         })
 
+        binding.refreshTaskList.setOnRefreshListener {
+            viewModel.getTasksFromNetwork()
+            binding.refreshTaskList.isRefreshing = false
+        }
+
         return binding.root
     }
 
