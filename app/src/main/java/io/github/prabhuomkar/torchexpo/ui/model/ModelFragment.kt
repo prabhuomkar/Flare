@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.binding.BindingHandlers
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
+import io.github.prabhuomkar.torchexpo.data.db.model.Task
 import io.github.prabhuomkar.torchexpo.databinding.ModelFragmentBinding
 
 class ModelFragment : Fragment() {
@@ -19,6 +20,7 @@ class ModelFragment : Fragment() {
     private var _binding: ModelFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var _model: Model
+    private lateinit var _task: Task
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +40,12 @@ class ModelFragment : Fragment() {
             if (model != null) {
                 _model = model
                 binding.model = model
+                viewModel.task(_model.taskId).observe(viewLifecycleOwner, Observer { task ->
+                    if (task != null) {
+                        _task = task
+                        binding.task = task
+                    }
+                })
             }
         })
 

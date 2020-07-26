@@ -8,18 +8,18 @@ class PlaygroundUtil {
 
     companion object {
         fun getPlaygroundDestinationAction(taskName: String, modelId: String): NavDirections? {
-            when (taskName.toLowerCase(Locale.ROOT).replace(" ", "")) {
-                "ImageClassification" -> return ModelFragmentDirections
+            when (taskName.toLowerCase(Locale.ROOT).replace(" ", "-")) {
+                "image-classification" -> return ModelFragmentDirections
                     .actionModelFragmentToImageClassificationFragment(modelId)
-                "ImageSegmentation" -> return ModelFragmentDirections
+                "image-segmentation" -> return ModelFragmentDirections
                     .actionModelFragmentToImageSegmentationFragment(modelId)
-                "ObjectDetection" -> return ModelFragmentDirections
+                "object-detection" -> return ModelFragmentDirections
                     .actionModelFragmentToObjectDetectionFragment(modelId)
-                "TextClassification" -> return ModelFragmentDirections
+                "text-classification" -> return ModelFragmentDirections
                     .actionModelFragmentToTextClassificationFragment(modelId)
-                "TextToSpeechSynthesis" -> return ModelFragmentDirections
+                "text-to-speech-synthesis" -> return ModelFragmentDirections
                     .actionModelFragmentToTextToSpeechSynthesisFragment(modelId)
-                "ImageGeneration" -> return ModelFragmentDirections
+                "image-generation" -> return ModelFragmentDirections
                     .actionModelFragmentToImageGenerationFragment(modelId)
                 else -> return null
             }
