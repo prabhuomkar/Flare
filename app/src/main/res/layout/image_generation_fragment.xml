@@ -10,8 +10,8 @@
             type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
-            name="model"
-            type="io.github.prabhuomkar.torchexpo.data.db.model.Model" />
+            name="modelLoadedName"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

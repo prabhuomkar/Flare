@@ -69,48 +69,48 @@
             android:id="@+id/action_modelFragment_to_imageClassificationFragment"
             app:destination="@id/imageClassificationFragment">
             <argument
-                android:name="modelId"
-                android:defaultValue="0"
+                android:name="modelName"
+                android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
             android:id="@+id/action_modelFragment_to_imageSegmentationFragment"
             app:destination="@id/imageSegmentationFragment">
             <argument
-                android:name="modelId"
-                android:defaultValue="0"
+                android:name="modelName"
+                android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
             android:id="@+id/action_modelFragment_to_objectDetectionFragment"
             app:destination="@id/objectDetectionFragment">
             <argument
-                android:name="modelId"
-                android:defaultValue="0"
+                android:name="modelName"
+                android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
             android:id="@+id/action_modelFragment_to_textClassificationFragment"
             app:destination="@id/textClassificationFragment">
             <argument
-                android:name="modelId"
-                android:defaultValue="0"
+                android:name="modelName"
+                android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
             android:id="@+id/action_modelFragment_to_textToSpeechSynthesisFragment"
             app:destination="@id/textToSpeechSynthesisFragment">
             <argument
-                android:name="modelId"
-                android:defaultValue="0"
+                android:name="modelName"
+                android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
             android:id="@+id/action_modelFragment_to_imageGenerationFragment"
             app:destination="@id/imageGenerationFragment">
             <argument
-                android:name="modelId"
-                android:defaultValue="0"
+                android:name="modelName"
+                android:defaultValue=""
                 app:argType="string" />
         </action>
     </fragment>
@@ -120,8 +120,8 @@
         android:label="Image Classification"
         tools:layout="@layout/image_classification_fragment">
         <argument
-            android:name="modelId"
-            android:defaultValue="0"
+            android:name="modelName"
+            android:defaultValue=""
             app:argType="string" />
     </fragment>
     <fragment
@@ -130,8 +130,8 @@
         android:label="Image Segmentation"
         tools:layout="@layout/image_segmentation_fragment">
         <argument
-            android:name="modelId"
-            android:defaultValue="0"
+            android:name="modelName"
+            android:defaultValue=""
             app:argType="string" />
     </fragment>
     <fragment
@@ -140,8 +140,8 @@
         android:label="Object Detection"
         tools:layout="@layout/object_detection_fragment">
         <argument
-            android:name="modelId"
-            android:defaultValue="0"
+            android:name="modelName"
+            android:defaultValue=""
             app:argType="string" />
     </fragment>
     <fragment
@@ -150,8 +150,8 @@
         android:label="Text Classification"
         tools:layout="@layout/text_classification_fragment">
         <argument
-            android:name="modelId"
-            android:defaultValue="0"
+            android:name="modelName"
+            android:defaultValue=""
             app:argType="string" />
     </fragment>
     <fragment
@@ -160,8 +160,8 @@
         android:label="Text-to-Speech Synthesis"
         tools:layout="@layout/text_to_speech_synthesis_fragment">
         <argument
-            android:name="modelId"
-            android:defaultValue="0"
+            android:name="modelName"
+            android:defaultValue=""
             app:argType="string" />
     </fragment>
     <fragment
@@ -170,8 +170,8 @@
         android:label="Image Generation"
         tools:layout="@layout/image_generation_fragment">
         <argument
-            android:name="modelId"
-            android:defaultValue="0"
+            android:name="modelName"
+            android:defaultValue=""
             app:argType="string" />
     </fragment>
 </navigation>

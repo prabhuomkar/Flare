@@ -1,23 +1,17 @@
 package io.github.prabhuomkar.torchexpo.ui.playground
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import io.github.prabhuomkar.torchexpo.data.db.TorchExpoDatabase
-import io.github.prabhuomkar.torchexpo.data.db.model.Model
-import io.github.prabhuomkar.torchexpo.data.repository.ModelRepository
+import io.github.prabhuomkar.torchexpo.util.FileUtil
+import org.pytorch.Module
 
 class PlaygroundViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val modelRepository: ModelRepository
+    private val context: Context = application.applicationContext
+    private lateinit var module: Module
 
-    init {
-        val modelDao = TorchExpoDatabase.getInstance(application).modelDao()
-        modelRepository = ModelRepository(modelDao)
+    fun load(modelName: String) {
+        module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
     }
-
-    fun model(id: String): LiveData<Model> {
-        return modelRepository.model(id)
-    }
-
 }

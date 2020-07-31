@@ -7,21 +7,21 @@ import java.util.*
 class PlaygroundUtil {
 
     companion object {
-        fun getPlaygroundDestinationAction(taskName: String, modelId: String): NavDirections? {
-            when (taskName.toLowerCase(Locale.ROOT).replace(" ", "-")) {
-                "image-classification" -> return ModelFragmentDirections
-                    .actionModelFragmentToImageClassificationFragment(modelId)
-                "image-segmentation" -> return ModelFragmentDirections
-                    .actionModelFragmentToImageSegmentationFragment(modelId)
-                "object-detection" -> return ModelFragmentDirections
-                    .actionModelFragmentToObjectDetectionFragment(modelId)
-                "text-classification" -> return ModelFragmentDirections
-                    .actionModelFragmentToTextClassificationFragment(modelId)
-                "text-to-speech-synthesis" -> return ModelFragmentDirections
-                    .actionModelFragmentToTextToSpeechSynthesisFragment(modelId)
-                "image-generation" -> return ModelFragmentDirections
-                    .actionModelFragmentToImageGenerationFragment(modelId)
-                else -> return null
+        fun getPlaygroundDestinationAction(taskName: String, modelName: String): NavDirections? {
+            return when (taskName.toLowerCase(Locale.ROOT).replace(" ", "-")) {
+                "image-classification" -> ModelFragmentDirections
+                    .actionModelFragmentToImageClassificationFragment(modelName)
+                "image-segmentation" -> ModelFragmentDirections
+                    .actionModelFragmentToImageSegmentationFragment(modelName)
+                "object-detection" -> ModelFragmentDirections
+                    .actionModelFragmentToObjectDetectionFragment(modelName)
+                "text-classification" -> ModelFragmentDirections
+                    .actionModelFragmentToTextClassificationFragment(modelName)
+                "text-to-speech-synthesis" -> ModelFragmentDirections
+                    .actionModelFragmentToTextToSpeechSynthesisFragment(modelName)
+                "image-generation" -> ModelFragmentDirections
+                    .actionModelFragmentToImageGenerationFragment(modelName)
+                else -> null
             }
         }
     }

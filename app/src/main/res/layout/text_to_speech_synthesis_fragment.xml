@@ -10,8 +10,8 @@
             type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
-            name="model"
-            type="io.github.prabhuomkar.torchexpo.data.db.model.Model" />
+            name="modelLoadedName"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@{model.name}"
+            android:text="@{modelLoadedName}"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
