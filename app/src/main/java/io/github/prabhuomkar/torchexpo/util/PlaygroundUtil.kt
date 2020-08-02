@@ -30,7 +30,7 @@ class PlaygroundUtil {
             val indexWithScores = ArrayList<Pair<Int, Float>>()
             for (i in values.indices) indexWithScores.add(Pair(i, values[i]))
             indexWithScores.sortWith(Comparator { score1, score2 -> score2.second.compareTo(score1.second) })
-            return indexWithScores
+            return indexWithScores.slice(IntRange(0, k))
         }
     }
 

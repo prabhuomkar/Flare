@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.view.View
 import androidx.lifecycle.AndroidViewModel
+import io.github.prabhuomkar.torchexpo.R
 import io.github.prabhuomkar.torchexpo.ui.playground.datasets.ImageNet
 import io.github.prabhuomkar.torchexpo.util.FileUtil
 import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
@@ -32,11 +33,14 @@ class PlaygroundViewModel(application: Application) : AndroidViewModel(applicati
             val result = PlaygroundUtil.topK(values, 3)
             if (result.isNotEmpty()) {
                 view.rootView.class1_text.text = ImageNet.TARGET_CLASSES[result[0].first]
-                view.rootView.class1_score.text = "%.2f".format(result[0].second)
+                view.rootView.class1_score.text =
+                    context.getString(R.string.score_precision).format(result[0].second)
                 view.rootView.class2_text.text = ImageNet.TARGET_CLASSES[result[1].first]
-                view.rootView.class2_score.text = "%.2f".format(result[1].second)
+                view.rootView.class2_score.text =
+                    context.getString(R.string.score_precision).format(result[1].second)
                 view.rootView.class3_text.text = ImageNet.TARGET_CLASSES[result[2].first]
-                view.rootView.class3_score.text = "%.2f".format(result[2].second)
+                view.rootView.class3_score.text =
+                    context.getString(R.string.score_precision).format(result[2].second)
             }
         }
     }

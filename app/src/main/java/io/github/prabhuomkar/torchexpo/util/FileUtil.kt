@@ -35,12 +35,7 @@ class FileUtil {
                     )
                     ImageDecoder.decodeBitmap(source).copy(Bitmap.Config.RGBA_F16, true)
                 }
-                else -> {
-                    MediaStore.Images.Media
-                        .getBitmap(
-                            context?.contentResolver, imageUri
-                        )
-                }
+                else -> MediaStore.Images.Media.getBitmap(context?.contentResolver, imageUri)
             }
             val dimension = if (bitmap.width > bitmap.height) bitmap.height else bitmap.width
             var croppedBitmap = ThumbnailUtils.extractThumbnail(bitmap, dimension, dimension)
