@@ -12,6 +12,10 @@
         <variable
             name="loadedModelName"
             type="String" />
+
+        <variable
+            name="loadedBitmap"
+            type="android.net.Uri" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,9 +27,11 @@
             android:id="@+id/inputImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/choose_image"
             android:src="@drawable/pytorch_logo"
-            app:layout_constraintBottom_toTopOf="@+id/playground_footer"
+            app:layout_constraintBottom_toTopOf="@+id/actionChooseImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:onClick="@{(view) -> viewModel.runImageClassification(view, loadedModelName, loadedBitmap)}"
             android:paddingVertical="8dp"
             android:text="@string/predict"
             android:textColor="@color/colorPrimary"
@@ -84,11 +91,11 @@
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@android:color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/object_heading"
+                app:layout_constraintBottom_toTopOf="@+id/class_heading"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/object_heading"
+                android:id="@+id/class_heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -113,71 +120,89 @@
 
             <TextView
                 android:id="@+id/class1_text"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:text="@string/loading"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/class2_text"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.85" />
 
             <TextView
                 android:id="@+id/class1_score"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:gravity="end"
                 android:text="@string/default_score"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/class2_score"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.15" />
 
             <TextView
                 android:id="@+id/class2_text"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:text="@string/loading"
                 android:textColor="@android:color/white"
-                android:textSize="19sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/class3_text"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.85" />
 
             <TextView
                 android:id="@+id/class2_score"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:gravity="end"
                 android:text="@string/default_score"
                 android:textColor="@android:color/white"
-                android:textSize="19sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/class3_score"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.15" />
 
             <TextView
                 android:id="@+id/class3_text"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:text="@string/loading"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.85" />
 
             <TextView
                 android:id="@+id/class3_score"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="end"
                 android:text="@string/default_score"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.15" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

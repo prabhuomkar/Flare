@@ -3,6 +3,7 @@ package io.github.prabhuomkar.torchexpo.util
 import androidx.navigation.NavDirections
 import io.github.prabhuomkar.torchexpo.ui.model.ModelFragmentDirections
 import java.util.*
+import kotlin.collections.ArrayList
 
 class PlaygroundUtil {
 
@@ -23,6 +24,13 @@ class PlaygroundUtil {
                     .actionModelFragmentToImageGenerationFragment(modelName)
                 else -> null
             }
+        }
+
+        fun topK(values: FloatArray, k: Int): List<Pair<Int, Float>> {
+            val indexWithScores = ArrayList<Pair<Int, Float>>()
+            for (i in values.indices) indexWithScores.add(Pair(i, values[i]))
+            indexWithScores.sortWith(Comparator { score1, score2 -> score2.second.compareTo(score1.second) })
+            return indexWithScores
         }
     }
 
