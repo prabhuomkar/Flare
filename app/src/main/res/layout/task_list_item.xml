@@ -33,6 +33,7 @@
                 android:id="@+id/taskImage"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
+                android:contentDescription="@{task.name}"
                 android:src="@mipmap/ic_launcher"
                 app:image="@{task.imageLink}"
                 app:layout_constraintBottom_toBottomOf="parent"

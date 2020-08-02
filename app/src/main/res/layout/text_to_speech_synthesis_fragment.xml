@@ -10,7 +10,7 @@
             type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
-            name="modelLoadedName"
+            name="loadedModelName"
             type="String" />
     </data>
 
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@{modelLoadedName}"
+            android:text="@{loadedModelName}"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"

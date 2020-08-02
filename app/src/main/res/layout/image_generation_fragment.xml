@@ -10,7 +10,7 @@
             type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
-            name="modelLoadedName"
+            name="loadedModelName"
             type="String" />
     </data>
 

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.github.prabhuomkar.torchexpo.data.db.model.Task
 import io.github.prabhuomkar.torchexpo.databinding.TaskFragmentBinding
-import io.github.prabhuomkar.torchexpo.ui.Model.ModelListAdapter
 
 class TaskFragment : Fragment() {
 

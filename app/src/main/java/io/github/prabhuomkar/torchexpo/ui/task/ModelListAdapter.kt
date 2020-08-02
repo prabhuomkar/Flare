@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.Model
+package io.github.prabhuomkar.torchexpo.ui.task
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

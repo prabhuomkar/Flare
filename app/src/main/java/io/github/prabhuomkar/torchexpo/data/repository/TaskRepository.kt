@@ -15,6 +15,4 @@ class TaskRepository(private val taskDao: TaskDao) {
     val researchAreas: LiveData<List<String>> = taskDao.getResearchAreas()
 
     suspend fun insert(task: Task) = taskDao.insert(task)
-
-    suspend fun deleteAll() = taskDao.delete()
 }

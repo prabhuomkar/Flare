@@ -30,7 +30,7 @@ class ImageSegmentationFragment : Fragment() {
             )
 
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.modelLoadedName = args.modelName
+        binding.loadedModelName = args.modelName
 
         return binding.root
     }

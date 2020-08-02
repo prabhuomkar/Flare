@@ -31,7 +31,7 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getModelsFromNetwork(taskId: String) = viewModelScope.launch(Dispatchers.IO) {
         val response = APIClient.instance.getModels(taskId)
-        if (response.isSuccessful()) {
+        if (response.isSuccessful) {
             response.body()?.forEach { modelRepository.insert(it) }
         }
     }

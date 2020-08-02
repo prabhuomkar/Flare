@@ -26,7 +26,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getTasksFromNetwork() = viewModelScope.launch(Dispatchers.IO) {
         val response = APIClient.instance.getTasks()
-        if (response.isSuccessful()) {
+        if (response.isSuccessful) {
             response.body()?.forEach { taskRepository.insert(it) }
         }
     }

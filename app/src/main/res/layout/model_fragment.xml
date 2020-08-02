@@ -30,6 +30,7 @@
             android:id="@+id/modelImage"
             android:layout_width="128dp"
             android:layout_height="128dp"
+            android:contentDescription="@{model.name}"
             android:src="@mipmap/ic_launcher"
             app:image="@{model.imageLink}"
             app:layout_constraintBottom_toBottomOf="parent"

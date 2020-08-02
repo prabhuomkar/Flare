@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginBottom="48dp"
+            android:contentDescription="@string/app_name"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toTopOf="@id/aboutDescriptionTextView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +82,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/built_with_pytorch"
                 android:src="@drawable/pytorch_logo" />
 
             <TextView

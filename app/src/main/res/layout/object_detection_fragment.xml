@@ -10,14 +10,59 @@
             type="io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel" />
 
         <variable
-            name="modelLoadedName"
+            name="loadedModelName"
             type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.playground.vision.ImageClassificationFragment">
+        tools:context=".ui.playground.vision.ObjectDetectionFragment">
+
+        <ImageView
+            android:id="@+id/inputImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/choose_image"
+            android:src="@drawable/pytorch_logo"
+            app:layout_constraintBottom_toTopOf="@+id/playground_footer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionChooseImage"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="8dp"
+            android:text="@string/choose_image"
+            android:textColor="@color/colorPrimary"
+            app:icon="@drawable/ic_camera"
+            app:iconSize="24dp"
+            app:iconTint="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@id/playground_footer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.46" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionPredict"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="8dp"
+            android:text="@string/predict"
+            android:textColor="@color/colorPrimary"
+            app:icon="@drawable/pytorch_logo"
+            app:iconSize="24dp"
+            app:iconTint="@null"
+            app:layout_constraintBottom_toTopOf="@id/playground_footer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.42" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/playground_footer"
@@ -34,24 +79,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Model Name"
-                android:text="@{modelLoadedName}"
+                android:hint="@string/model_name"
+                android:text="@{loadedModelName}"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@android:color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/class_heading"
+                app:layout_constraintBottom_toTopOf="@+id/object_heading"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/class_heading"
+                android:id="@+id/object_heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="CLASS"
+                android:text="@string/model_object"
                 android:textColor="#AAA"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/class1_text"
+                app:layout_constraintBottom_toTopOf="@+id/object1_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -59,76 +104,76 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="SCORE"
+                android:text="@string/model_score"
                 android:textColor="#AAA"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/class1_score"
+                app:layout_constraintBottom_toTopOf="@+id/object1_score"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/class1_text"
+                android:id="@+id/object1_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="Loading"
+                android:text="@string/loading"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/class2_text"
+                app:layout_constraintBottom_toTopOf="@+id/object2_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/class1_score"
+                android:id="@+id/object1_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="0.00"
+                android:text="@string/default_score"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/class2_score"
+                app:layout_constraintBottom_toTopOf="@+id/object2_score"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/class2_text"
+                android:id="@+id/object2_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="Loading"
+                android:text="@string/loading"
                 android:textColor="@android:color/white"
                 android:textSize="19sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/class3_text"
+                app:layout_constraintBottom_toTopOf="@+id/object3_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/class2_score"
+                android:id="@+id/object2_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="0.00"
+                android:text="@string/default_score"
                 android:textColor="@android:color/white"
                 android:textSize="19sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/class3_score"
+                app:layout_constraintBottom_toTopOf="@+id/object3_score"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/class3_text"
+                android:id="@+id/object3_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Loading"
+                android:text="@string/loading"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/class3_score"
+                android:id="@+id/object3_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0.00"
+                android:text="@string/default_score"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -8,10 +8,10 @@ import java.util.*
 class FileUtil {
 
     companion object {
-        fun getModelAssetFileName(modelName: String): String =
+        private fun getModelAssetFileName(modelName: String): String =
             modelName.toLowerCase(Locale.ROOT).replace("[ - ]", "_").plus(".pt")
 
-        fun getModelAssetDirPath(context: Context): String =
+        private fun getModelAssetDirPath(context: Context): String =
             context.applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
                 .toString()
 
