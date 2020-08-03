@@ -12,6 +12,10 @@
         <variable
             name="loadedModelName"
             type="String" />
+
+        <variable
+            name="loadedBitmap"
+            type="android.net.Uri" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +27,8 @@
             android:id="@+id/inputImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/choose_image"
             android:src="@drawable/pytorch_logo"
             app:layout_constraintBottom_toTopOf="@+id/playground_footer"
@@ -54,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:onClick="@{(view) -> viewModel.runImageSegmentation(view, loadedModelName, loadedBitmap)}"
             android:paddingVertical="8dp"
             android:text="@string/predict"
             android:textColor="@color/colorPrimary"

@@ -15,7 +15,10 @@ class FileUtil {
 
     companion object {
         private fun getModelAssetFileName(modelName: String): String =
-            modelName.toLowerCase(Locale.ROOT).replace("[ - ]", "_").plus(".pt")
+            modelName.toLowerCase(Locale.ROOT)
+                .replace(" ", "_")
+                .replace("-", "")
+                .plus(".pt")
 
         private fun getModelAssetDirPath(context: Context): String =
             context.applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
@@ -27,8 +30,8 @@ class FileUtil {
         fun isModelAssetFileDownloaded(context: Context, modelName: String) =
             File(getModelAssetFilePath(context, modelName)).exists()
 
-        fun getBitmap(context: Context?, imageUri: Uri?): Bitmap {
-            val bitmap = when {
+        fun getBitmap(context: Context?, imageUri: Uri?, square: Boolean): Bitmap {
+            var bitmap = when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.P -> {
                     val source = ImageDecoder.createSource(
                         context?.contentResolver!!, imageUri!!
@@ -37,12 +40,17 @@ class FileUtil {
                 }
                 else -> MediaStore.Images.Media.getBitmap(context?.contentResolver, imageUri)
             }
-            val dimension = if (bitmap.width > bitmap.height) bitmap.height else bitmap.width
-            var croppedBitmap = ThumbnailUtils.extractThumbnail(bitmap, dimension, dimension)
-            if (croppedBitmap.height > 400) {
-                croppedBitmap = Bitmap.createScaledBitmap(croppedBitmap, 400, 400, true)
+            var scale = 400F / bitmap.height
+            if (bitmap.width >= bitmap.height) {
+                scale = 400F / bitmap.width
             }
-            return croppedBitmap
+            val scaledBitmap = Bitmap.createScaledBitmap(
+                bitmap,
+                (bitmap.width * scale).toInt(), (bitmap.height * scale).toInt(), true
+            )
+            return if (square) {
+                ThumbnailUtils.extractThumbnail(scaledBitmap, 400, 400)
+            } else scaledBitmap
         }
     }
 

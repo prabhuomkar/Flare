@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import io.github.prabhuomkar.torchexpo.databinding.ImageClassificationFragmentBinding
 import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 import io.github.prabhuomkar.torchexpo.util.FileUtil
+import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
 
 
 class ImageClassificationFragment : Fragment() {
@@ -36,11 +37,7 @@ class ImageClassificationFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.loadedModelName = args.modelName
         binding.viewModel = viewModel
-
-        binding.actionChooseImage.setOnClickListener {
-            val intent = Intent().setType("image/*").setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
-        }
+        binding.actionChooseImage.setOnClickListener { PlaygroundUtil.chooseImage(this) }
 
         return binding.root
     }
@@ -54,7 +51,7 @@ class ImageClassificationFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, intent)
         if (requestCode == 1 && resultCode == RESULT_OK && intent != null && intent.data != null) {
             val imageUri = intent.data
-            val bitmap = FileUtil.getBitmap(context, imageUri)
+            val bitmap = FileUtil.getBitmap(context, imageUri, true)
             binding.inputImage.setImageBitmap(bitmap)
             binding.loadedBitmap = imageUri
         }
