@@ -33,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
+    splits {
+        abi {
+            enable true
+            universalApk false
+        }
+    }
 }
 
 dependencies {

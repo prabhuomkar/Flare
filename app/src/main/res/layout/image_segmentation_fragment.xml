@@ -31,7 +31,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/choose_image"
             android:src="@drawable/pytorch_logo"
-            app:layout_constraintBottom_toTopOf="@+id/playground_footer"
+            app:layout_constraintBottom_toTopOf="@+id/actionChooseImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
