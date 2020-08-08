@@ -82,32 +82,16 @@
                 app:argType="string" />
         </action>
         <action
-            android:id="@+id/action_modelFragment_to_objectDetectionFragment"
-            app:destination="@id/objectDetectionFragment">
+            android:id="@+id/action_modelFragment_to_questionAnsweringFragment"
+            app:destination="@id/questionAnsweringFragment">
             <argument
                 android:name="modelName"
                 android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
-            android:id="@+id/action_modelFragment_to_textClassificationFragment"
-            app:destination="@id/textClassificationFragment">
-            <argument
-                android:name="modelName"
-                android:defaultValue=""
-                app:argType="string" />
-        </action>
-        <action
-            android:id="@+id/action_modelFragment_to_textToSpeechSynthesisFragment"
-            app:destination="@id/textToSpeechSynthesisFragment">
-            <argument
-                android:name="modelName"
-                android:defaultValue=""
-                app:argType="string" />
-        </action>
-        <action
-            android:id="@+id/action_modelFragment_to_imageGenerationFragment"
-            app:destination="@id/imageGenerationFragment">
+            android:id="@+id/action_modelFragment_to_textGenerationFragment"
+            app:destination="@id/textGenerationFragment">
             <argument
                 android:name="modelName"
                 android:defaultValue=""
@@ -135,40 +119,21 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/objectDetectionFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.ObjectDetectionFragment"
-        android:label="Object Detection"
-        tools:layout="@layout/object_detection_fragment">
+        android:id="@+id/questionAnsweringFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.QuestionAnsweringFragment"
+        android:label="Question Answering"
+        tools:layout="@layout/question_answering_fragment">
         <argument
             android:name="modelName"
             android:defaultValue=""
             app:argType="string" />
     </fragment>
+
     <fragment
-        android:id="@+id/textClassificationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.TextClassificationFragment"
-        android:label="Text Classification"
-        tools:layout="@layout/text_classification_fragment">
-        <argument
-            android:name="modelName"
-            android:defaultValue=""
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/textToSpeechSynthesisFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.audio.TextToSpeechSynthesisFragment"
-        android:label="Text-to-Speech Synthesis"
-        tools:layout="@layout/text_to_speech_synthesis_fragment">
-        <argument
-            android:name="modelName"
-            android:defaultValue=""
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/imageGenerationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.generative.ImageGenerationFragment"
-        android:label="Image Generation"
-        tools:layout="@layout/image_generation_fragment">
+        android:id="@+id/textGenerationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.TextGenerationFragment"
+        android:label="Text Generation"
+        tools:layout="@layout/text_generation_fragment">
         <argument
             android:name="modelName"
             android:defaultValue=""

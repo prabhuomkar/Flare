@@ -9,10 +9,10 @@ import android.view.View
 import androidx.core.graphics.set
 import androidx.lifecycle.AndroidViewModel
 import io.github.prabhuomkar.torchexpo.R
-import io.github.prabhuomkar.torchexpo.ui.playground.datasets.ImageNet
+import io.github.prabhuomkar.torchexpo.torchexpo.TensorOperations
+import io.github.prabhuomkar.torchexpo.ui.playground.common.ImageNet
 import io.github.prabhuomkar.torchexpo.util.FileUtil
 import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
-import io.github.prabhuomkar.torchexpo.util.TensorUtil
 import kotlinx.android.synthetic.main.image_classification_fragment.view.*
 import org.pytorch.IValue
 import org.pytorch.Module
@@ -22,17 +22,21 @@ import org.pytorch.torchvision.TensorImageUtils
 class PlaygroundViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context: Context = application.applicationContext
+    private lateinit var module: Module
 
     private fun input(bitmap: Bitmap): Tensor = TensorImageUtils.bitmapToFloat32Tensor(
         bitmap,
         TensorImageUtils.TORCHVISION_NORM_MEAN_RGB, TensorImageUtils.TORCHVISION_NORM_STD_RGB
     )
 
+    fun clearPlayground() = module.destroy()
+
     fun runImageClassification(view: View, modelName: String?, bitmapUri: Uri?) {
         if (!modelName.isNullOrEmpty() && bitmapUri != null) {
             val bitmap = FileUtil.getBitmap(context, bitmapUri, true)
-            val module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
-            val values = module.forward(IValue.from(input(bitmap))).toTensor().dataAsFloatArray
+            module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
+            val values = module.forward(IValue.from(input(bitmap))).toTensor()
+                .dataAsFloatArray
             val result = PlaygroundUtil.topK(values, 3)
             if (result.isNotEmpty()) {
                 view.rootView.class1_text.text = ImageNet.TARGET_CLASSES[result[0].first]
@@ -51,10 +55,10 @@ class PlaygroundViewModel(application: Application) : AndroidViewModel(applicati
     fun runImageSegmentation(view: View, modelName: String?, bitmapUri: Uri?) {
         if (!modelName.isNullOrEmpty() && bitmapUri != null) {
             val bitmap = FileUtil.getBitmap(context, bitmapUri, false)
-            val module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
+            module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
             val values = module.forward(IValue.from(input(bitmap))).toTensor()
             val shape = values.shape()
-            val output = TensorUtil.argmax(
+            val output = TensorOperations.argmax(
                 values.dataAsFloatArray, shape[0].toInt(), shape[1].toInt(),
                 shape[2].toInt()
             )

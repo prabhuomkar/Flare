@@ -1,6 +1,6 @@
-package io.github.prabhuomkar.torchexpo.util
+package io.github.prabhuomkar.torchexpo.torchexpo
 
-class TensorUtil {
+class TensorOperations {
     companion object {
         fun argmax(data: FloatArray, dim: Int, height: Int, width: Int): IntArray {
             val result = IntArray(height * width)

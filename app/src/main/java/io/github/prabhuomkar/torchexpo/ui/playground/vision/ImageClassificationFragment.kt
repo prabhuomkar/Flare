@@ -45,6 +45,7 @@ class ImageClassificationFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.clearPlayground()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {

@@ -28,4 +28,6 @@
     <string name="err_no_network_message">Nothing to see here</string>
     <string name="err_no_connection">No connection</string>
     <string name="err_no_email_client">Please select an email client</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

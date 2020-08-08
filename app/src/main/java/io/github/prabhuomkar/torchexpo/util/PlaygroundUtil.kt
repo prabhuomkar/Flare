@@ -18,14 +18,10 @@ class PlaygroundUtil {
                     .actionModelFragmentToImageClassificationFragment(modelName)
                 "image-segmentation" -> ModelFragmentDirections
                     .actionModelFragmentToImageSegmentationFragment(modelName)
-                "object-detection" -> ModelFragmentDirections
-                    .actionModelFragmentToObjectDetectionFragment(modelName)
-                "text-classification" -> ModelFragmentDirections
-                    .actionModelFragmentToTextClassificationFragment(modelName)
-                "text-to-speech-synthesis" -> ModelFragmentDirections
-                    .actionModelFragmentToTextToSpeechSynthesisFragment(modelName)
-                "image-generation" -> ModelFragmentDirections
-                    .actionModelFragmentToImageGenerationFragment(modelName)
+                "question-answering" -> ModelFragmentDirections
+                    .actionModelFragmentToQuestionAnsweringFragment(modelName)
+                "text-generation" -> ModelFragmentDirections
+                    .actionModelFragmentToTextGenerationFragment(modelName)
                 else -> null
             }
         }

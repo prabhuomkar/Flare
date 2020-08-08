@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.datasets
+package io.github.prabhuomkar.torchexpo.ui.playground.common
 
 class ImageNet {
     companion object {

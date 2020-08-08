@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import io.github.prabhuomkar.torchexpo.databinding.TextClassificationFragmentBinding
+import io.github.prabhuomkar.torchexpo.databinding.QuestionAnsweringFragmentBinding
 import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 
-class TextClassificationFragment : Fragment() {
+class QuestionAnsweringFragment : Fragment() {
 
-    private val args: TextClassificationFragmentArgs by navArgs()
+    private val args: QuestionAnsweringFragmentArgs by navArgs()
     private lateinit var viewModel: PlaygroundViewModel
-    private var _binding: TextClassificationFragmentBinding? = null
+    private var _binding: QuestionAnsweringFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class TextClassificationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = TextClassificationFragmentBinding.inflate(inflater, container, false)
+        _binding = QuestionAnsweringFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
                 PlaygroundViewModel(
