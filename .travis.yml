@@ -23,3 +23,5 @@ cache:
 script:
   - ./gradlew ktlintCheck
   - ./gradlew build check
+  - ./gradlew assembleDebug
+  - ./gradlew assembleDebugAndroidTest
