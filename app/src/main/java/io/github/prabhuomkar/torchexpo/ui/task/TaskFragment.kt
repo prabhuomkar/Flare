@@ -42,8 +42,8 @@ class TaskFragment : Fragment() {
         })
         viewModel.modelsByTask(taskId).observe(viewLifecycleOwner, Observer { models ->
             if (models != null && models.isNotEmpty()) {
-                binding.modelList.adapter = ModelListAdapter(models)
                 binding.showModels = true
+                binding.modelList.adapter = ModelListAdapter(models)
             } else {
                 viewModel.getModelsFromNetwork(binding.root.context, null, taskId)
             }

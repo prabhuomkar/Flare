@@ -33,9 +33,8 @@ class MainFragment : Fragment() {
         binding.taskList.layoutManager = linearLayoutManager
         viewModel.tasks.observe(viewLifecycleOwner, Observer { tasks ->
             if (tasks != null && tasks.isNotEmpty()) {
-                binding.taskList.adapter = TaskListAdapter(tasks)
-                Log.v("TEST", "Showing Tasks")
                 binding.showTasks = true
+                binding.taskList.adapter = TaskListAdapter(tasks)
             } else {
                 viewModel.getTasksFromNetwork(binding.root.context, null)
             }
