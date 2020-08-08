@@ -95,5 +95,4 @@ class PlaygroundViewModel(application: Application) : AndroidViewModel(applicati
             view.rootView.inputImage.setImageBitmap(segmentedBitmap)
         }
     }
-
 }

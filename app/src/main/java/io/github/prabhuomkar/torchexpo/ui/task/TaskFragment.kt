@@ -22,7 +22,8 @@ class TaskFragment : Fragment() {
     private lateinit var _task: Task
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = TaskFragmentBinding.inflate(inflater, container, false)
@@ -61,5 +62,4 @@ class TaskFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

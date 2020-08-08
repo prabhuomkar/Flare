@@ -33,8 +33,9 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
     fun modelsByTask(taskId: String): LiveData<List<Model>> = modelRepository.modelsByTask(taskId)
 
     fun getModelsFromNetwork(
-        context: Context, refreshModelList: SwipeRefreshLayout?, taskId:
-        String
+        context: Context,
+        refreshModelList: SwipeRefreshLayout?,
+        taskId: String
     ) = viewModelScope.launch(Dispatchers.IO) {
         if (NetworkUtil.isConnected(context)) {
             val response = APIClient.instance.getModels(taskId)

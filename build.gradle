@@ -36,6 +36,9 @@ allprojects {
         jcenter()
     }
     apply plugin: "org.jlleitschuh.gradle.ktlint"
+    ktlint {
+        disabledRules = ["final-newline", "import-ordering"]
+    }
 }
 
 task clean(type: Delete) {

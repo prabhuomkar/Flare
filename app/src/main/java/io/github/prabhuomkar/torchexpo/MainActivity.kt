@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse(HELP_URL)
+                    Uri.parse(Constants.HELP_URL)
                 )
             )
             true
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         R.id.action_contact -> {
             val emailIntent = Intent(
                 Intent.ACTION_SENDTO, Uri.fromParts(
-                    "mailto", CONTACT_EMAIL, null
+                    "mailto", Constants.CONTACT_EMAIL, null
                 )
             )
             try {

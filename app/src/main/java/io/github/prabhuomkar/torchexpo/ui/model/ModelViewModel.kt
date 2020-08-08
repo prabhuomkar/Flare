@@ -9,7 +9,6 @@ import io.github.prabhuomkar.torchexpo.data.db.model.Task
 import io.github.prabhuomkar.torchexpo.data.repository.ModelRepository
 import io.github.prabhuomkar.torchexpo.data.repository.TaskRepository
 
-
 class ModelViewModel(application: Application) : AndroidViewModel(application) {
 
     private val taskRepository: TaskRepository

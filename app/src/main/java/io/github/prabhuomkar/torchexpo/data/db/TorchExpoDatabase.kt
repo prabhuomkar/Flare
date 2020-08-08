@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import io.github.prabhuomkar.torchexpo.DATABASE_NAME
+import io.github.prabhuomkar.torchexpo.Constants
 import io.github.prabhuomkar.torchexpo.data.db.dao.ModelDao
 import io.github.prabhuomkar.torchexpo.data.db.dao.TaskDao
 import io.github.prabhuomkar.torchexpo.data.db.model.Model
@@ -32,8 +32,7 @@ abstract class TorchExpoDatabase : RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 TorchExpoDatabase::class.java,
-                DATABASE_NAME
+                Constants.DATABASE_NAME
             ).build()
-
     }
 }

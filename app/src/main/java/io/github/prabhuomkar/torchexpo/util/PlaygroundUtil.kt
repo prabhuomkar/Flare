@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import io.github.prabhuomkar.torchexpo.R
 import io.github.prabhuomkar.torchexpo.ui.model.ModelFragmentDirections
-import java.util.*
+import java.util.Locale
+import kotlin.Comparator
 import kotlin.collections.ArrayList
 
 class PlaygroundUtil {
@@ -30,7 +31,7 @@ class PlaygroundUtil {
         }
 
         fun chooseImage(fragment: Fragment) {
-            val intent = Intent().setType("image/*").setAction(Intent.ACTION_GET_CONTENT);
+            val intent = Intent().setType("image/*").setAction(Intent.ACTION_GET_CONTENT)
             fragment.startActivityForResult(
                 Intent.createChooser(
                     intent,
@@ -46,5 +47,4 @@ class PlaygroundUtil {
             return indexWithScores.slice(IntRange(0, k))
         }
     }
-
 }

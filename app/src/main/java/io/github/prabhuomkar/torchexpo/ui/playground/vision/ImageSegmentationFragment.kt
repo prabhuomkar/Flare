@@ -22,7 +22,8 @@ class ImageSegmentationFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = ImageSegmentationFragmentBinding.inflate(inflater, container, false)
@@ -55,5 +56,4 @@ class ImageSegmentationFragment : Fragment() {
             binding.loadedBitmap = imageUri
         }
     }
-
 }

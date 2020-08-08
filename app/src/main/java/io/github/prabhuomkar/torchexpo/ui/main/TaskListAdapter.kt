@@ -7,7 +7,6 @@ import io.github.prabhuomkar.torchexpo.binding.BindingHandlers
 import io.github.prabhuomkar.torchexpo.data.db.model.Task
 import io.github.prabhuomkar.torchexpo.databinding.TaskListItemBinding
 
-
 class TaskListAdapter(private val tasks: List<Task>) :
     RecyclerView.Adapter<TaskListAdapter.TaskViewHolder>() {
 

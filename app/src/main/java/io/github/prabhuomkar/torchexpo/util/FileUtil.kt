@@ -9,7 +9,7 @@ import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
 import java.io.File
-import java.util.*
+import java.util.Locale
 
 class FileUtil {
 
@@ -53,5 +53,4 @@ class FileUtil {
             } else scaledBitmap
         }
     }
-
 }

@@ -14,7 +14,6 @@ import io.github.prabhuomkar.torchexpo.ui.playground.PlaygroundViewModel
 import io.github.prabhuomkar.torchexpo.util.FileUtil
 import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
 
-
 class ImageClassificationFragment : Fragment() {
 
     private val args: ImageClassificationFragmentArgs by navArgs()
@@ -23,7 +22,8 @@ class ImageClassificationFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = ImageClassificationFragmentBinding.inflate(inflater, container, false)
@@ -56,5 +56,4 @@ class ImageClassificationFragment : Fragment() {
             binding.loadedBitmap = imageUri
         }
     }
-
 }
