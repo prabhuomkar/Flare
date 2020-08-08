@@ -15,7 +15,6 @@
     <string name="built_with_pytorch">Built with PyTorch</string>
     <string name="more_models_coming_soon">Support for more models are coming soon!</string>
 
-    <string name="err_no_email_client">Please select an email client</string>
     <string name="text_to_classify">Text to classify</string>
     <string name="text">Text</string>
     <string name="model_name">Model Name</string>
@@ -25,4 +24,8 @@
     <string name="loading">Loading</string>
     <string name="default_score">0.00</string>
     <string name="score_precision">%.2f</string>
+
+    <string name="err_no_network_message">Nothing to see here</string>
+    <string name="err_no_connection">No connection</string>
+    <string name="err_no_email_client">Please select an email client</string>
 </resources>

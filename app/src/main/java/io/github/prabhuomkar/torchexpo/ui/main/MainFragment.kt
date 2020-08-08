@@ -1,6 +1,7 @@
 package io.github.prabhuomkar.torchexpo.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,14 +34,15 @@ class MainFragment : Fragment() {
         viewModel.tasks.observe(viewLifecycleOwner, Observer { tasks ->
             if (tasks != null && tasks.isNotEmpty()) {
                 binding.taskList.adapter = TaskListAdapter(tasks)
+                Log.v("TEST", "Showing Tasks")
+                binding.showTasks = true
             } else {
-                viewModel.getTasksFromNetwork()
+                viewModel.getTasksFromNetwork(binding.root.context, null)
             }
         })
 
         binding.refreshTaskList.setOnRefreshListener {
-            viewModel.getTasksFromNetwork()
-            binding.refreshTaskList.isRefreshing = false
+            viewModel.getTasksFromNetwork(binding.root.context, binding.refreshTaskList)
         }
 
         return binding.root

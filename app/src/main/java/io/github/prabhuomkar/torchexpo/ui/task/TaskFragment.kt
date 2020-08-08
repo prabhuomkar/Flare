@@ -43,13 +43,14 @@ class TaskFragment : Fragment() {
         viewModel.modelsByTask(taskId).observe(viewLifecycleOwner, Observer { models ->
             if (models != null && models.isNotEmpty()) {
                 binding.modelList.adapter = ModelListAdapter(models)
+                binding.showModels = true
             } else {
-                viewModel.getModelsFromNetwork(taskId)
+                viewModel.getModelsFromNetwork(binding.root.context, null, taskId)
             }
         })
 
         binding.refreshModelList.setOnRefreshListener {
-            viewModel.getModelsFromNetwork(taskId)
+            viewModel.getModelsFromNetwork(binding.root.context, binding.refreshModelList, taskId)
             binding.refreshModelList.isRefreshing = false
         }
 
