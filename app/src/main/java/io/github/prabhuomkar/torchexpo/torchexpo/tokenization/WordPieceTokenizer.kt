@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.common.tokenization
+package io.github.prabhuomkar.torchexpo.torchexpo.tokenization
 
 class WordPieceTokenizer(vocab: Map<String, Int>) {
 

@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.common.tokenization
+package io.github.prabhuomkar.torchexpo.torchexpo.tokenization
 
 class GPT2Tokenizer(
     private val encoder: Map<String, Int>,

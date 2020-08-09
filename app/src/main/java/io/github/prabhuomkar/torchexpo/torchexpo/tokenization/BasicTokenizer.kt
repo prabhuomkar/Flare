@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground.common.tokenization
+package io.github.prabhuomkar.torchexpo.torchexpo.tokenization
 
 import com.google.common.base.Ascii
 import com.google.common.collect.Iterables

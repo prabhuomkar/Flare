@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.torchexpo.ui.playground
+package io.github.prabhuomkar.torchexpo.ui.playground.vision
 
 import android.app.Application
 import android.content.Context
@@ -19,7 +19,7 @@ import org.pytorch.Module
 import org.pytorch.Tensor
 import org.pytorch.torchvision.TensorImageUtils
 
-class PlaygroundViewModel(application: Application) : AndroidViewModel(application) {
+class VisionViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context: Context = application.applicationContext
     private lateinit var module: Module
