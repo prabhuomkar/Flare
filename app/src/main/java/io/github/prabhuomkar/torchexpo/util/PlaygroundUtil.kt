@@ -18,10 +18,10 @@ class PlaygroundUtil {
                     .actionModelFragmentToImageClassificationFragment(modelName)
                 "image-segmentation" -> ModelFragmentDirections
                     .actionModelFragmentToImageSegmentationFragment(modelName)
-                "question-answering" -> ModelFragmentDirections
-                    .actionModelFragmentToQuestionAnsweringFragment(modelName)
-                "text-generation" -> ModelFragmentDirections
-                    .actionModelFragmentToTextGenerationFragment(modelName)
+                "sentiment-analysis" -> ModelFragmentDirections
+                    .actionModelFragmentToSentimentAnalysisFragment(modelName)
+                "text-classification" -> ModelFragmentDirections
+                    .actionModelFragmentToTextClassificationFragment(modelName)
                 else -> null
             }
         }

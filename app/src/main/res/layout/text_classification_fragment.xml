@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="io.github.prabhuomkar.torchexpo.ui.playground.vision.VisionViewModel" />
+            type="io.github.prabhuomkar.torchexpo.ui.playground.nlp.NLPViewModel" />
 
         <variable
             name="loadedModelName"
@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.playground.nlp.TextGenerationFragment">
+        tools:context=".ui.playground.nlp.TextClassificationFragment">
 
         <TextView
             android:id="@+id/modelName"
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputText"
+            android:id="@+id/inputTextLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,6 +44,7 @@
             app:layout_constraintTop_toBottomOf="@+id/modelName">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

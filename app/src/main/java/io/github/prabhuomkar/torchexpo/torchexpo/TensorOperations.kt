@@ -1,5 +1,7 @@
 package io.github.prabhuomkar.torchexpo.torchexpo
 
+import io.github.prabhuomkar.torchexpo.torchexpo.tokenization.FullTokenizer
+
 class TensorOperations {
     companion object {
         fun argmax(data: FloatArray, dim: Int, height: Int, width: Int): IntArray {
@@ -16,6 +18,22 @@ class TensorOperations {
                 result[i] = maxDim
             }
             return result
+        }
+
+        fun convert(inputDictionary: Map<String, Int>, text: String): IntArray {
+            val tokenizer = FullTokenizer(inputDictionary, true)
+            val maxSeqLen = 128
+            var tokens: MutableList<String> = tokenizer.tokenize(text)
+            tokens.add(0, "[CLS]")
+            if (tokens.size > maxSeqLen - 1) {
+                tokens = tokens.subList(0, maxSeqLen - 1)
+            }
+            tokens.add("[SEP]")
+            val inputIds: MutableList<Int> = tokenizer.convertTokensToIds(tokens)
+            while (inputIds.size < maxSeqLen) {
+                inputIds.add(0)
+            }
+            return inputIds.toIntArray()
         }
     }
 }

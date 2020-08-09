@@ -9,6 +9,8 @@ import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
 import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import java.util.Locale
 
 class FileUtil {
@@ -29,6 +31,30 @@ class FileUtil {
 
         fun isModelAssetFileDownloaded(context: Context, modelName: String) =
             File(getModelAssetFilePath(context, modelName)).exists()
+
+        fun getAssetFilePath(context: Context, fileName: String): String? {
+            val file = File(context.filesDir, fileName)
+            if (file.exists() && file.length() > 0) {
+                return file.absolutePath
+            }
+
+            try {
+                context.assets.open(fileName).use { `is` ->
+                    FileOutputStream(file).use { os ->
+                        val buffer = ByteArray(4 * 1024)
+                        var read: Int
+                        while (`is`.read(buffer).also { read = it } != -1) {
+                            os.write(buffer, 0, read)
+                        }
+                        os.flush()
+                    }
+                    return file.absolutePath
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            return null
+        }
 
         fun getBitmap(context: Context?, imageUri: Uri?, square: Boolean): Bitmap {
             var bitmap = when {

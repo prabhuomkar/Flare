@@ -11,7 +11,7 @@ fun loadImage(view: ImageView, imageUrl: String?) {
     if (!imageUrl.isNullOrEmpty()) {
         Glide.with(view)
             .load(imageUrl)
-            .placeholder(R.mipmap.ic_launcher)
+            .error(R.mipmap.ic_launcher)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(view)
     }

@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import io.github.prabhuomkar.torchexpo.databinding.TextGenerationFragmentBinding
-import io.github.prabhuomkar.torchexpo.ui.playground.vision.VisionViewModel
+import io.github.prabhuomkar.torchexpo.databinding.TextClassificationFragmentBinding
 
-class TextGenerationFragment : Fragment() {
+class TextClassificationFragment : Fragment() {
 
-    private val args: TextGenerationFragmentArgs by navArgs()
-    private lateinit var viewModel: VisionViewModel
-    private var _binding: TextGenerationFragmentBinding? = null
+    private val args: TextClassificationFragmentArgs by navArgs()
+    private lateinit var viewModel: NLPViewModel
+    private var _binding: TextClassificationFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,16 +21,17 @@ class TextGenerationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = TextGenerationFragmentBinding.inflate(inflater, container, false)
+        _binding = TextClassificationFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProvider(this).get(
-                VisionViewModel(
+                NLPViewModel(
                     this.activity!!.application
                 )::class.java
             )
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.loadedModelName = args.modelName
+        binding.viewModel = viewModel
 
         return binding.root
     }
@@ -39,5 +39,6 @@ class TextGenerationFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.clearPlayground()
     }
 }

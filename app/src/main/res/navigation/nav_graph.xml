@@ -82,16 +82,16 @@
                 app:argType="string" />
         </action>
         <action
-            android:id="@+id/action_modelFragment_to_questionAnsweringFragment"
-            app:destination="@id/questionAnsweringFragment">
+            android:id="@+id/action_modelFragment_to_sentimentAnalysisFragment"
+            app:destination="@id/sentimentAnalysisFragment">
             <argument
                 android:name="modelName"
                 android:defaultValue=""
                 app:argType="string" />
         </action>
         <action
-            android:id="@+id/action_modelFragment_to_textGenerationFragment"
-            app:destination="@id/textGenerationFragment">
+            android:id="@+id/action_modelFragment_to_textClassificationFragment"
+            app:destination="@id/textClassificationFragment">
             <argument
                 android:name="modelName"
                 android:defaultValue=""
@@ -119,10 +119,10 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/questionAnsweringFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.QuestionAnsweringFragment"
-        android:label="Question Answering"
-        tools:layout="@layout/question_answering_fragment">
+        android:id="@+id/sentimentAnalysisFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.SentimentAnalysisFragment"
+        android:label="Sentiment Analysis"
+        tools:layout="@layout/sentiment_analysis_fragment">
         <argument
             android:name="modelName"
             android:defaultValue=""
@@ -130,10 +130,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/textGenerationFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.TextGenerationFragment"
-        android:label="Text Generation"
-        tools:layout="@layout/text_generation_fragment">
+        android:id="@+id/textClassificationFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.playground.nlp.TextClassificationFragment"
+        android:label="Text Classification"
+        tools:layout="@layout/text_classification_fragment">
         <argument
             android:name="modelName"
             android:defaultValue=""
