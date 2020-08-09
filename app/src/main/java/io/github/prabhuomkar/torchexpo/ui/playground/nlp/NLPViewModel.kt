@@ -4,17 +4,21 @@ import android.app.Application
 import android.content.Context
 import android.view.View
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import io.github.prabhuomkar.torchexpo.R
 import io.github.prabhuomkar.torchexpo.torchexpo.TensorOperations
 import io.github.prabhuomkar.torchexpo.ui.playground.common.IMDb
 import io.github.prabhuomkar.torchexpo.util.FileUtil
 import kotlinx.android.synthetic.main.sentiment_analysis_fragment.view.*
+import kotlinx.coroutines.launch
 import org.pytorch.IValue
 import org.pytorch.Module
 import org.pytorch.Tensor
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.util.Locale
+import kotlin.collections.HashMap
 
 class NLPViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -47,7 +51,7 @@ class NLPViewModel(application: Application) : AndroidViewModel(application) {
         view.rootView.inputText.setText(IMDb.SAMPLES[(0..3).random()])
     }
 
-    fun runSentimentAnalysis(view: View, modelName: String?) {
+    fun runSentimentAnalysis(view: View, modelName: String?) = viewModelScope.launch {
         if (!modelName.isNullOrEmpty()) {
             module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
             val inputText = view.rootView.inputText.text.toString()
@@ -61,6 +65,7 @@ class NLPViewModel(application: Application) : AndroidViewModel(application) {
             val outputTuple = output.toTuple()
             val outputTensor = outputTuple[0].toTensor()
             val result = outputTensor.dataAsFloatArray
+            if (modelName.toLowerCase(Locale.ROOT).equals("distilbert")) result.reverse()
             if (result.isNotEmpty()) {
                 view.rootView.sentiment_positive_score.text =
                     context.getString(R.string.score_more_precision).format(result[0])

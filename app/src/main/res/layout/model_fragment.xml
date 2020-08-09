@@ -103,7 +103,7 @@
             android:layout_marginTop="16dp"
             android:onClick="@{(view) -> handlers.openLink(view, model.paperLink)}"
             android:paddingVertical="8dp"
-            android:text="@{model.paperLink.length() > 22 ? model.paperLink.substring(22) : ``}"
+            android:text="@{model.paperLink.length() > 22 ? model.paperLink.substring(22).replace(`.pdf`, ``) : ``}"
             android:textColor="@color/colorPrimary"
             android:visibility="@{model.paperLink.length() > 22 ? View.VISIBLE : View.GONE}"
             app:icon="@drawable/arxiv_logo"

@@ -22,7 +22,7 @@ class TensorOperations {
 
         fun convert(inputDictionary: Map<String, Int>, text: String): IntArray {
             val tokenizer = FullTokenizer(inputDictionary, true)
-            val maxSeqLen = 128
+            val maxSeqLen = 256
             var tokens: MutableList<String> = tokenizer.tokenize(text)
             tokens.add(0, "[CLS]")
             if (tokens.size > maxSeqLen - 1) {
