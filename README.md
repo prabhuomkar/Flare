@@ -23,7 +23,7 @@
 ```shell script
 git clone https://github.com/torchexpo/android.git
 OR
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/TorchExpo.git
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/android.git
 ```
 
 ## Contributing
