@@ -10,6 +10,7 @@ import io.github.prabhuomkar.torchexpo.torchexpo.TensorOperations
 import io.github.prabhuomkar.torchexpo.ui.playground.common.IMDb
 import io.github.prabhuomkar.torchexpo.util.FileUtil
 import kotlinx.android.synthetic.main.sentiment_analysis_fragment.view.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.pytorch.IValue
 import org.pytorch.Module
@@ -17,7 +18,7 @@ import org.pytorch.Tensor
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
-import java.util.Locale
+import java.util.*
 import kotlin.collections.HashMap
 
 class NLPViewModel(application: Application) : AndroidViewModel(application) {
@@ -26,16 +27,12 @@ class NLPViewModel(application: Application) : AndroidViewModel(application) {
     private var module: Module? = null
     private var dictionary: MutableMap<String, Int> = HashMap()
 
-    init {
-        loadDictionary()
-    }
-
     fun clearPlayground() {
         module?.destroy()
     }
 
-    private fun loadDictionary() {
-        val vocabFilePath = FileUtil.getAssetFilePath(context, "imdb_vocab.txt")
+    private fun loadDictionary(fileName: String) {
+        val vocabFilePath = FileUtil.getAssetFilePath(context, fileName)
         if (!vocabFilePath.isNullOrEmpty()) {
             BufferedReader(FileReader(File(vocabFilePath))).use { reader ->
                 var index = 0
@@ -48,30 +45,33 @@ class NLPViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun loadIMDbSample(view: View) {
-        view.rootView.inputText.setText(IMDb.SAMPLES[(0..3).random()])
+        view.rootView.inputText.setText(IMDb.SAMPLES[(IMDb.SAMPLES.indices).random()])
     }
 
-    fun runSentimentAnalysis(view: View, modelName: String?) = viewModelScope.launch {
-        if (!modelName.isNullOrEmpty()) {
-            module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
-            val inputText = view.rootView.inputText.text.toString()
-            val features = TensorOperations.convert(dictionary, inputText)
-            val curSeqLen = features.size
-            val inputIds = LongArray(curSeqLen)
-            for (j in 0 until curSeqLen) inputIds[j] = features.get(j).toLong()
-            val shape = longArrayOf(1, curSeqLen.toLong())
-            val inputTensor = Tensor.fromBlob(inputIds, shape)
-            val output = module!!.forward(IValue.from(inputTensor))
-            val outputTuple = output.toTuple()
-            val outputTensor = outputTuple[0].toTensor()
-            val result = outputTensor.dataAsFloatArray
-            if (modelName.toLowerCase(Locale.ROOT).equals("distilbert")) result.reverse()
-            if (result.isNotEmpty()) {
-                view.rootView.sentiment_positive_score.text =
-                    context.getString(R.string.score_more_precision).format(result[0])
-                view.rootView.sentiment_negative_score.text =
-                    context.getString(R.string.score_more_precision).format(result[1])
+    fun runSentimentAnalysis(view: View, modelName: String?) =
+        viewModelScope.launch(Dispatchers.IO) {
+            loadDictionary("imdb_vocab.txt")
+            if (!modelName.isNullOrEmpty()) {
+                module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
+                val inputText = view.rootView.inputText.text.toString()
+                val features =
+                    TensorOperations.featureConvertForSentimentAnalysis(dictionary, inputText)
+                val curSeqLen = features.size
+                val inputIds = LongArray(curSeqLen)
+                for (j in 0 until curSeqLen) inputIds[j] = features.get(j).toLong()
+                val shape = longArrayOf(1, curSeqLen.toLong())
+                val inputTensor = Tensor.fromBlob(inputIds, shape)
+                val output = module!!.forward(IValue.from(inputTensor))
+                val outputTuple = output.toTuple()
+                val outputTensor = outputTuple[0].toTensor()
+                val result = outputTensor.dataAsFloatArray
+                if (modelName.toLowerCase(Locale.ROOT).contains("distilbert")) result.reverse()
+                if (result.isNotEmpty()) {
+                    view.rootView.sentiment_positive_score.text =
+                        context.getString(R.string.score_more_precision).format(result[0])
+                    view.rootView.sentiment_negative_score.text =
+                        context.getString(R.string.score_more_precision).format(result[1])
+                }
             }
         }
-    }
 }
