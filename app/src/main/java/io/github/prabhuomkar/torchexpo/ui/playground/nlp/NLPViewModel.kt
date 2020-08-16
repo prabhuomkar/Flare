@@ -19,7 +19,7 @@ import org.pytorch.Tensor
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
-import java.util.*
+import java.util.Locale
 import kotlin.collections.HashMap
 
 class NLPViewModel(application: Application) : AndroidViewModel(application) {

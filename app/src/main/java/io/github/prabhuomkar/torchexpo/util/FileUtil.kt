@@ -11,7 +11,7 @@ import android.provider.MediaStore
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.util.*
+import java.util.Locale
 
 class FileUtil {
 
@@ -57,7 +57,7 @@ class FileUtil {
         }
 
         fun getBitmap(context: Context?, imageUri: Uri?, square: Boolean): Bitmap {
-            var bitmap = when {
+            val bitmap = when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.P -> {
                     val source = ImageDecoder.createSource(
                         context?.contentResolver!!, imageUri!!
