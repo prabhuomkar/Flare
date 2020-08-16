@@ -4,7 +4,7 @@ class Constants {
     companion object {
         const val DATABASE_NAME = "torchexpo_db"
 
-        const val HELP_URL = "https://github.com/prabhuomkar/TorchExpo"
+        const val HELP_URL = "https://github.com/torchexpo/android"
         const val CONTACT_EMAIL = "prabhuomkar@pm.me"
 
         const val ACCEPT_HEADER = "application/vnd.torchexpo+json;version=1"
