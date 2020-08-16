@@ -11,6 +11,7 @@ import io.github.prabhuomkar.torchexpo.data.db.model.Task
 import io.github.prabhuomkar.torchexpo.data.network.APIClient
 import io.github.prabhuomkar.torchexpo.data.repository.TaskRepository
 import io.github.prabhuomkar.torchexpo.util.NetworkUtil
+import io.github.prabhuomkar.torchexpo.util.UIUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -30,10 +31,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun getTasksFromNetwork(context: Context, refreshTaskList: SwipeRefreshLayout?) =
         viewModelScope.launch(Dispatchers.IO) {
             if (NetworkUtil.isConnected(context)) {
+                UIUtil.showSnackbar(context, "Loading...")
                 val response = APIClient.instance.getTasks()
                 if (response.isSuccessful) {
                     response.body()?.forEach { taskRepository.insert(it) }
                 }
+            } else {
+                UIUtil.showSnackbar(context, "No connection", true)
             }
             if (refreshTaskList != null) refreshTaskList.isRefreshing = false
         }

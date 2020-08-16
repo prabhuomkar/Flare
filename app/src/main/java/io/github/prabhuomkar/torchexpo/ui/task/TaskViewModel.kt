@@ -13,6 +13,7 @@ import io.github.prabhuomkar.torchexpo.data.network.APIClient
 import io.github.prabhuomkar.torchexpo.data.repository.ModelRepository
 import io.github.prabhuomkar.torchexpo.data.repository.TaskRepository
 import io.github.prabhuomkar.torchexpo.util.NetworkUtil
+import io.github.prabhuomkar.torchexpo.util.UIUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -38,10 +39,13 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
         taskId: String
     ) = viewModelScope.launch(Dispatchers.IO) {
         if (NetworkUtil.isConnected(context)) {
+            UIUtil.showSnackbar(context, "Loading...")
             val response = APIClient.instance.getModels(taskId)
             if (response.isSuccessful) {
                 response.body()?.forEach { modelRepository.insert(it) }
             }
+        } else {
+            UIUtil.showSnackbar(context, "No connection", true)
         }
         if (refreshModelList != null) refreshModelList.isRefreshing = false
     }

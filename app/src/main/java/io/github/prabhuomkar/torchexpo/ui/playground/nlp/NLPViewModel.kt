@@ -9,6 +9,7 @@ import io.github.prabhuomkar.torchexpo.R
 import io.github.prabhuomkar.torchexpo.torchexpo.TensorOperations
 import io.github.prabhuomkar.torchexpo.ui.playground.common.IMDb
 import io.github.prabhuomkar.torchexpo.util.FileUtil
+import io.github.prabhuomkar.torchexpo.util.UIUtil
 import kotlinx.android.synthetic.main.sentiment_analysis_fragment.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,11 +49,21 @@ class NLPViewModel(application: Application) : AndroidViewModel(application) {
         view.rootView.inputText.setText(IMDb.SAMPLES[(IMDb.SAMPLES.indices).random()])
     }
 
+    private fun loadModel(view: View, modelName: String) {
+        try {
+            module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            UIUtil.showSnackbar(view.context, "Model cannot be loaded")
+        }
+    }
+
     fun runSentimentAnalysis(view: View, modelName: String?) =
         viewModelScope.launch(Dispatchers.IO) {
             loadDictionary("imdb_vocab.txt")
+            UIUtil.showSnackbar(view.context, "Predicting...")
             if (!modelName.isNullOrEmpty()) {
-                module = Module.load(FileUtil.getModelAssetFilePath(context, modelName))
+                loadModel(view, modelName)
                 val inputText = view.rootView.inputText.text.toString()
                 val features =
                     TensorOperations.featureConvertForSentimentAnalysis(dictionary, inputText)
