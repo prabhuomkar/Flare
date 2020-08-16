@@ -51,7 +51,7 @@
             app:iconTint="@color/colorAccent"
             app:layout_constraintBottom_toTopOf="@id/playground_footer"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintWidth_percent="0.46" />
+            app:layout_constraintWidth_percent="0.52" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/actionPredict"
@@ -69,7 +69,7 @@
             app:iconTint="@null"
             app:layout_constraintBottom_toTopOf="@id/playground_footer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.42" />
+            app:layout_constraintWidth_percent="0.36" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/playground_footer"

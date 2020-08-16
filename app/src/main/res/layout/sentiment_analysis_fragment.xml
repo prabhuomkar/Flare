@@ -26,7 +26,7 @@
             android:layout_height="0dp"
             android:layout_margin="16dp"
             android:hint="@string/text_to_classify"
-            app:layout_constraintBottom_toTopOf="@+id/actionChooseImage"
+            app:layout_constraintBottom_toTopOf="@+id/actionLoadSample"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
