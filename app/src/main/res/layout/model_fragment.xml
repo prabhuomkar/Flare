@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:onClick="@{(view) -> handlers.downloadModel(view, model.name, model.downloadLink)}"
             android:paddingVertical="8dp"
-            android:text="@{@string/download + ` (`+ model.size +` MB)`}"
+            android:text="@{@string/download + ` (`+ model.size +`MB)`}"
             android:textColor="@color/colorAccent"
             app:canDownload="@{model.name}"
             app:layout_constraintEnd_toEndOf="parent"
