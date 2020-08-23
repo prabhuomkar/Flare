@@ -1,8 +1,8 @@
 # TorchExpo Android Application
 
-<img src="https://img.shields.io/github/license/torchexpo/android?style=flat-square"
-   alt="License">
-<img src="https://img.shields.io/travis/torchexpo/api?style=flat-square" alt="Build Status">
+![License](https://img.shields.io/github/license/torchexpo/android)
+[![Build Status](https://travis-ci.com/torchexpo/android.svg?branch=master)](https://travis-ci.com/torchexpo/android)
+
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
