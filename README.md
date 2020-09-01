@@ -16,7 +16,7 @@
 
 ## Installation
 
-This project is built using [Kotlin](https://kotlinlang.org) and [Android Studio](https://developer
+This project is built using [Kotlin](https://kotlinlang.org), [PyTorch Android](https://pytorch.org/mobile/android/) and [Android Studio](https://developer
 .android.com/studio).
 
 ```shell script
