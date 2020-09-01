@@ -16,8 +16,7 @@
 
 ## Installation
 
-This project is built using [Kotlin](https://kotlinlang.org), [PyTorch Android](https://pytorch.org/mobile/android/) and [Android Studio](https://developer
-.android.com/studio).
+This project is built using [Kotlin](https://kotlinlang.org), [PyTorch Android](https://pytorch.org/mobile/android/) and [Android Studio](https://developer.android.com/studio).
 
 ```shell script
 git clone https://github.com/torchexpo/android.git
