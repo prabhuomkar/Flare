@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import io.github.prabhuomkar.torchexpo.R
-import io.github.prabhuomkar.torchexpo.ui.model.ModelFragmentDirections
 import java.util.Locale
 import kotlin.Comparator
 import kotlin.collections.ArrayList
@@ -14,12 +13,10 @@ class PlaygroundUtil {
     companion object {
         fun getPlaygroundDestinationAction(taskName: String, modelName: String): NavDirections? {
             return when (taskName.toLowerCase(Locale.ROOT).replace(" ", "-")) {
-                "image-classification" -> ModelFragmentDirections
-                    .actionModelFragmentToImageClassificationFragment(modelName)
-                "image-segmentation" -> ModelFragmentDirections
-                    .actionModelFragmentToImageSegmentationFragment(modelName)
-                "sentiment-analysis" -> ModelFragmentDirections
-                    .actionModelFragmentToSentimentAnalysisFragment(modelName)
+                // TODO(omkar): Update directions from model to its fragment
+                "image-classification" -> null
+                "image-segmentation" -> null
+                "sentiment-analysis" -> null
                 else -> null
             }
         }

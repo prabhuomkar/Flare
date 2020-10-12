@@ -3,93 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@+id/mainFragment">
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.main.MainFragment"
-        android:label="TorchExpo"
-        tools:layout="@layout/main_fragment">
-        <action
-            android:id="@+id/action_mainFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_mainFragment_to_taskFragment"
-            app:destination="@id/taskFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim">
-            <argument
-                android:name="taskId"
-                android:defaultValue="0"
-                app:argType="string" />
-        </action>
-    </fragment>
+    app:startDestination="@+id/collectionsFragment">
     <fragment
         android:id="@+id/aboutFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.about.AboutFragment"
         android:label="About"
         tools:layout="@layout/about_fragment" />
     <fragment
-        android:id="@+id/taskFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.task.TaskFragment"
-        android:label="Task"
-        tools:layout="@layout/task_fragment">
-        <argument
-            android:name="taskId"
-            android:defaultValue="0"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_taskFragment_to_modelFragment"
-            app:destination="@id/modelFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim">
-            <argument
-                android:name="modelId"
-                android:defaultValue="0"
-                app:argType="string" />
-        </action>
-    </fragment>
+        android:id="@+id/collectionsFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.collections.CollectionsFragment"
+        android:label="Collections"
+        tools:layout="@layout/collections_fragment" />
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.collections.CollectionFragment"
+        android:label="Collection"
+        tools:layout="@layout/collection_fragment" />
+    <fragment
+        android:id="@+id/modelsFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.models.ModelsFragment"
+        android:label="Models"
+        tools:layout="@layout/models_fragment" />
     <fragment
         android:id="@+id/modelFragment"
-        android:name="io.github.prabhuomkar.torchexpo.ui.model.ModelFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.models.ModelFragment"
         android:label="Model"
-        tools:layout="@layout/model_fragment">
-        <argument
-            android:name="modelId"
-            android:defaultValue="0"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_modelFragment_to_imageClassificationFragment"
-            app:destination="@id/imageClassificationFragment">
-            <argument
-                android:name="modelName"
-                android:defaultValue=""
-                app:argType="string" />
-        </action>
-        <action
-            android:id="@+id/action_modelFragment_to_imageSegmentationFragment"
-            app:destination="@id/imageSegmentationFragment">
-            <argument
-                android:name="modelName"
-                android:defaultValue=""
-                app:argType="string" />
-        </action>
-        <action
-            android:id="@+id/action_modelFragment_to_sentimentAnalysisFragment"
-            app:destination="@id/sentimentAnalysisFragment">
-            <argument
-                android:name="modelName"
-                android:defaultValue=""
-                app:argType="string" />
-        </action>
-    </fragment>
+        tools:layout="@layout/model_fragment" />
+    <fragment
+        android:id="@+id/publishersFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.publishers.PublisherFragment"
+        android:label="Publishers"
+        tools:layout="@layout/publishers_fragment" />
+    <fragment
+        android:id="@+id/publisherFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.publishers.PublisherFragment"
+        android:label="Publisher"
+        tools:layout="@layout/publisher_fragment" />
     <fragment
         android:id="@+id/imageClassificationFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.playground.vision.ImageClassificationFragment"

@@ -5,8 +5,6 @@ import android.net.Uri
 import android.view.View
 import android.widget.Button
 import androidx.navigation.findNavController
-import io.github.prabhuomkar.torchexpo.ui.main.MainFragmentDirections
-import io.github.prabhuomkar.torchexpo.ui.task.TaskFragmentDirections
 import io.github.prabhuomkar.torchexpo.util.DownloadUtil
 import io.github.prabhuomkar.torchexpo.util.PlaygroundUtil
 
@@ -28,14 +26,16 @@ class BindingHandlers {
         if (navDirection != null) view.findNavController().navigate(navDirection)
     }
 
-    fun navigateToTask(view: View, taskId: String) {
-        view.findNavController()
-            .navigate(MainFragmentDirections.actionMainFragmentToTaskFragment(taskId))
+    fun navigateToCollection(view: View, taskSlug: String) {
+        // TODO(omkar): setup click from collection list to collection detail
     }
 
-    fun navigateToModel(view: View, modelId: String) {
-        view.findNavController()
-            .navigate(TaskFragmentDirections.actionTaskFragmentToModelFragment(modelId))
+    fun navigateToModel(view: View, modelSlug: String) {
+        // TODO(omkar): setup click from model list to model detail
+    }
+
+    fun navigateToPublisher(view: View, publisherSlug: String) {
+        // TODO(omkar): setup click from publisher list to publisher detail
     }
 
     fun downloadModel(view: View, modelName: String?, downloadLink: String?) {
