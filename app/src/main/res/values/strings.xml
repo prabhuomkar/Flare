@@ -6,6 +6,9 @@
     <string name="options_menu_github">GitHub</string>
     <string name="options_menu_contact_us">Contact us</string>
 
+    <string name="collections">Collections</string>
+    <string name="models">Models</string>
+    <string name="publishers">Publishers</string>
     <string name="download">Download</string>
     <string name="play">Open Playground</string>
     <string name="choose_image">Choose Image</string>
