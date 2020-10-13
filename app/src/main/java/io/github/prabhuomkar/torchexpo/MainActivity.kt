@@ -1,9 +1,7 @@
 package io.github.prabhuomkar.torchexpo
 
-import android.app.DownloadManager
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -14,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
-import io.github.prabhuomkar.torchexpo.util.DownloadUtil
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,10 +28,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         setupNavigation()
-        registerReceiver(
-            DownloadUtil.broadcastReceiver,
-            IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
-        )
     }
 
     private fun setupNavigation() {
