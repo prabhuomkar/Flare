@@ -6,6 +6,9 @@
     <string name="options_menu_github">GitHub</string>
     <string name="options_menu_contact_us">Contact us</string>
 
+    <string name="collection">Collection</string>
+    <string name="model">Model</string>
+    <string name="publisher">Publisher</string>
     <string name="collections">Collections</string>
     <string name="models">Models</string>
     <string name="publishers">Publishers</string>
